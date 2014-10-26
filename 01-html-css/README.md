@@ -8,6 +8,8 @@ HTML и CSS
 - http://pythontutor.ru/
 - http://2long2read.ru/
 
+Я хочу научить вас делать что-то подобное.
+
 
 Демонстрации для лекции
 ---
@@ -30,31 +32,18 @@ HTML, CSS, JavaScript на веб-странице: [всё в одном фай
 Задания
 -------
 
-**1. Todo-list.** Сверстайте содержимое [Todo-list](http://ahamlett.com/Backbone.localStorage/examples/index.html)'а у себя на компьютере. Можете добиваться выравнивания и красоты своими CSS-стилями, а можете использовать любой CSS-фреймворк. На следующей лекции мы напишем логику для todo-list'а.
+**1. Todo-list.** Сверстайте содержимое [Todo-list](http://ahamlett.com/Backbone.localStorage/examples/index.html)'а у себя на компьютере. На следующей неделе мы напишем логику для него.
+- Можете добиваться выравнивания и красоты своими CSS-стилями, а можете использовать любой CSS-фреймворк.
+- Выложите Todo-list на хостинг статических сайтов [Hostinger](http://www.hostinger.ru/).
+- Поделитесь со всеми ссылкой на своё решение [на вики-страничке](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-1)
 
-2. Списки, заголовки, жирный и курсивный текст: [htmlacademy](http://htmlacademy.ru/courses/38/run/16) — жёлтое выделение можно сделать тегом `<mark>`, а можно и забить на него
-3. Таблицы: [htmlacademy](http://htmlacademy.ru/courses/39/run/9)
-4. Формы: [htmlacademy](http://htmlacademy.ru/courses/46/run/11)
-1. Размеры, цвет фона, цвет текста: [htmlacademy](http://htmlacademy.ru/courses/41/run/15)
-2. Блочная модель: [htmlacademy](http://htmlacademy.ru/courses/44/run/8)
-
-
-**Глобальное задание на две недели**: сделать [Todo-list](http://ahamlett.com/Backbone.localStorage/examples/index.html) и выложить его в интернет
-
-Для тех, кому скучно, или же как задание на будущее: сверстайте и запрогайте [вступительную в школу Хедхантер](https://github.com/vpavlenko/hh-school-frontend)
-
-1. Выложите Todo-list на [Hostinger](http://www.hostinger.ru/)
+**2. Календарь.** Сверстайте календарь, стараясь повторить [макет](https://github.com/glibin/hh-school-frontend). Это было вступительным заданием в школу программистов компании Headhunter на отделение фронтенд-разработки в 2013 году.
 
 
-Послесловие
+Материалы
 --------
 
-1. Как развиваться: решать htmlacademy, Школа разработки интерфейсов.
-4. CSS: [Pure CSS](http://purecss.io/), [Twitter Bootstrap](http://getbootstrap.com/), Modernizr.
-5. Дизайнеры, фотошоп, макет.
-
-Литература
-----------
-
+1. Курсы по вёрстке на [htmlacademy](http://htmlacademy.ru/).
+4. CSS-фреймворки: [Twitter Bootstrap](http://getbootstrap.com/), [Zurb Foundation](http://foundation.zurb.com/).
 1. [Dive into HTML5](http://diveintohtml5.info/)
-2. [Презентация Вадима Пацева с курса на Школе разработки интерфейсов](http://vpavlenko.github.io/YWDS-CSS/)
+2. Лекции Школы разработки интерфейсов: [2012](http://habrahabr.ru/company/yandex/blog/168259/), [2013](https://tech.yandex.ru/education/shri/msk-2013/). [Презентация Вадима Пацева по CSS с курса на Школе разработки интерфейсов](http://vpavlenko.github.io/YWDS-CSS/)
