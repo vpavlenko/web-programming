@@ -9,13 +9,12 @@ HTML и CSS
 - http://2long2read.ru/
 
 
-Введение
-========
+Демонстрации для лекции
+---
 
-Что такое веб-страница: [страница](http://vpavlenko.github.io/startup-engineering/frontend/intro/), [фидл](http://jsfiddle.net/LBxWP/1/)
-
-HTML
-====
+HTML, CSS, JavaScript на веб-странице: [всё в одном файле](http://vpavlenko.github.io/web-programming/01-html-css/three-boxes-single-file.html), 
+[три разных файла](http://vpavlenko.github.io/web-programming/01-html-css/three-boxes/), 
+[фидл](http://jsfiddle.net/LBxWP/2/)
 
 [Домашняя страничка Гвидо ван Россума](http://www.python.org/~guido/) как пример HTML-кода десятилетней давности
 
@@ -23,22 +22,21 @@ HTML
 
 [Фидл с примером таблицы](http://jsfiddle.net/b6R9R/1/)
 
-CSS
-===
+[Блог Армина Ронахера](http://lucumr.pocoo.org/)
 
-[Домашняя страничка Армина Ронахера](http://lucumr.pocoo.org/)
+[CSS-фреймворк Pure CSS](http://purecss.io/)
 
 
-Задание
+Задания
 -------
 
-1. Создайте у себя на компьютере файл about_me.html, вставьте в него своё имя, свою фотографию и ссылку на свою страничку в контакте.
+**1. Todo-list.** Сверстайте содержимое [Todo-list](http://ahamlett.com/Backbone.localStorage/examples/index.html)'а у себя на компьютере. Можете добиваться выравнивания и красоты своими CSS-стилями, а можете использовать любой CSS-фреймворк. На следующей лекции мы напишем логику для todo-list'а.
+
 2. Списки, заголовки, жирный и курсивный текст: [htmlacademy](http://htmlacademy.ru/courses/38/run/16) — жёлтое выделение можно сделать тегом `<mark>`, а можно и забить на него
 3. Таблицы: [htmlacademy](http://htmlacademy.ru/courses/39/run/9)
 4. Формы: [htmlacademy](http://htmlacademy.ru/courses/46/run/11)
 1. Размеры, цвет фона, цвет текста: [htmlacademy](http://htmlacademy.ru/courses/41/run/15)
 2. Блочная модель: [htmlacademy](http://htmlacademy.ru/courses/44/run/8)
-3. Сверстайте содержимое [Todo-list](http://ahamlett.com/Backbone.localStorage/examples/index.html)'а у себя на компьютере.
 
 
 **Глобальное задание на две недели**: сделать [Todo-list](http://ahamlett.com/Backbone.localStorage/examples/index.html) и выложить его в интернет
@@ -49,14 +47,14 @@ CSS
 
 
 Послесловие
-===========
+--------
 
-1. Как развиваться: htmlacademy, ШРИ.
+1. Как развиваться: решать htmlacademy, Школа разработки интерфейсов.
 4. CSS: [Pure CSS](http://purecss.io/), [Twitter Bootstrap](http://getbootstrap.com/), Modernizr.
 5. Дизайнеры, фотошоп, макет.
 
 Литература
-==========
+----------
 
 1. [Dive into HTML5](http://diveintohtml5.info/)
 2. [Презентация Вадима Пацева с курса на Школе разработки интерфейсов](http://vpavlenko.github.io/YWDS-CSS/)
