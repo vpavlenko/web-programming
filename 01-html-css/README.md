@@ -26,7 +26,7 @@ HTML, CSS, JavaScript на веб-странице: [всё в одном фай
 
 [Блог Армина Ронахера](http://lucumr.pocoo.org/)
 
-Вёрстка: [выравнивание по центру](http://learnlayout.com/margin-auto.html), [пример вёрстк](http://learnlayout.com/position-example.html)
+Вёрстка: [выравнивание по центру](http://learnlayout.com/margin-auto.html), [пример вёрстки](http://learnlayout.com/position-example.html)
 
 [CSS-фреймворк Pure CSS](http://purecss.io/)
 
