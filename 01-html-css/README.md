@@ -49,3 +49,4 @@ HTML, CSS, JavaScript на веб-странице: [всё в одном фай
 4. CSS-фреймворки: [Twitter Bootstrap](http://getbootstrap.com/), [Zurb Foundation](http://foundation.zurb.com/).
 1. [Dive into HTML5](http://diveintohtml5.info/)
 2. Лекции Школы разработки интерфейсов: [2012](http://habrahabr.ru/company/yandex/blog/168259/), [2013](https://tech.yandex.ru/education/shri/msk-2013/). [Презентация Вадима Пацева по CSS с курса на Школе разработки интерфейсов](http://vpavlenko.github.io/YWDS-CSS/)
+3. [Idiomatic HTML](https://github.com/necolas/idiomatic-html), [idiomatic CSS](https://github.com/necolas/idiomatic-css/tree/master/translations/ru-RU).
