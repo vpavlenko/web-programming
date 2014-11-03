@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>Таблица умножения</title>
+        <meta charset="utf8">
+
+        <style type="text/css">
+        input[type=number] {
+            width: 3em;
+        }
+
+        td, th {
+            width: 2em;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        #control-panel {
+            display: table-cell;
+        }
+
+        #multiplication-table {
+            margin-top: 1em;
+        }
+
+        .num-input {
+            width: 3em;
+        }
+
+        #error {
+            color: red;
+        }
+
+        #grat {
+            color: green;
+        }
+
+        </style>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js">
+        </script>
+
+        <script type="text/javascript">
+
+        function game() {
+            rows = $("#rows").val();
+            columns = $("#columns").val();
+            var table = $('<table cellspacing="1" border="1">');
+            $("#multiplication-table").html(table);
+
+            for (var i = 0; i <= rows; ++i) {
+                var tr = $('<tr>');
+                for (var j = 0; j <= columns; ++j) {
+                    var td;
+                    if ((i == 0 || j == 0) && (i != j)) {
+                        td = $('<th>').text(i + j);
+                    } else {
+                        td = $('<td>');
+                    }
+                    td.attr('id', i + '-' + j);
+
+                    tr.append(td);
+                }
+                table.append(tr);
+            }
+
+            order = [];
+
+            for (var i = 1; i <= rows; ++i) {
+                for (var j = 1; j <= columns; ++j) {
+                    order.push([i, j]);
+                }
+            }
+
+            shuffle(order);
+
+            step = 0;
+            next_round();
+        }
+
+        function next_round() {
+            $('#question').show();
+            $('#error').hide();
+            $('#grat').hide();
+
+            var row = order[step][0];
+            var col = order[step][1];
+            $('#question').text('Сколько будет ' + row + ' умножить на ' + col + '?');
+            var input = $('<input type="text" class="num-input">');
+            var cell = $("#" + row + '-' + col);
+            cell.append(input);
+            input.focus();
+            input.keypress(function (e) {
+                if (e.which == 13) {
+                    enter_pressed();
+                }
+            });
+        }
+
+        function enter_pressed() {
+            var row = order[step][0];
+            var col = order[step][1];
+            var cell = $("#" + row + '-' + col);
+            var input = $(cell.children('input')[0]);
+            if (input.val() == row * col) {
+                $('#error').hide();
+
+                input.remove();
+                cell.text(row * col);
+                step++;
+                if (step < order.length) {
+                    next_round();
+                } else {
+                    $("#question").hide();
+                    $('#grat').show();
+                }
+            } else {
+                $('#error').show();
+                $('#error').text('Подумайте ещё');
+                input.select();
+            }
+        }
+
+
+        //+ Jonas Raoni Soares Silva
+        //@ http://jsfromhell.com/array/shuffle [v1.0]
+        function shuffle(o){ //v1.0
+            for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+            return o;
+        };
+
+        $(document).ready(function() {
+            $('#start').click(function() {
+                game();
+            });
+
+            $('#question').hide();
+            $('#error').hide();
+            $('#grat').hide();
+            // game();
+        });
+        </script>
+
+    </head>
+        <div id="control-panel">
+        <fieldset>
+        <legend>Настройки</legend>
+Таблица умножения <input type="number" id="rows" value="5"> на <input type="number" id="columns" value="5">.
+<br>
+<input type="button" id="start" value="Начать тренировку">
+        </fieldset>
+        </div>
+
+        <div id="multiplication-table">
+
+        </div>
+
+        <div id="dialogs">
+        <h3 id="question"></h3>
+        <h3 id="error"></h3>
+        <h3 id="grat">Поздравляем, вы успешно повторили таблицу умножения</h3>
+        </div>
+
+        <div id="hint">
+        </div>
+    <body>
+    </body>
+</html>
