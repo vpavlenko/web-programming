@@ -1,0 +1,14 @@
+form > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.suggest {
+    color: grey;
+    border-bottom: 1px dotted grey;
+}
+
+.suggest:hover {
+    color: red;
+    border-bottom: 1px dotted red;
+}
