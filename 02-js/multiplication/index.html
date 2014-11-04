@@ -33,7 +33,7 @@
             color: red;
         }
 
-        #grat {
+        #congratulations {
             color: green;
         }
 
@@ -83,7 +83,7 @@
         function next_round() {
             $('#question').show();
             $('#error').hide();
-            $('#grat').hide();
+            $('#congratulations').hide();
 
             var row = order[step][0];
             var col = order[step][1];
@@ -114,7 +114,7 @@
                     next_round();
                 } else {
                     $("#question").hide();
-                    $('#grat').show();
+                    $('#congratulations').show();
                 }
             } else {
                 $('#error').show();
@@ -138,33 +138,30 @@
 
             $('#question').hide();
             $('#error').hide();
-            $('#grat').hide();
-            // game();
+            $('#congratulations').hide();
         });
         </script>
-
     </head>
+
+    <body>
         <div id="control-panel">
-        <fieldset>
-        <legend>Настройки</legend>
-Таблица умножения <input type="number" id="rows" value="5"> на <input type="number" id="columns" value="5">.
-<br>
-<input type="button" id="start" value="Начать тренировку">
-        </fieldset>
+            <fieldset>
+                <legend>Настройки</legend>
+                Таблица умножения <input type="number" id="rows" value="3"> на <input type="number" id="columns" value="3">.
+                <br>
+                <input type="button" id="start" value="Начать тренировку">
+            </fieldset>
         </div>
 
-        <div id="multiplication-table">
-
-        </div>
+        <div id="multiplication-table"></div>
 
         <div id="dialogs">
-        <h3 id="question"></h3>
-        <h3 id="error"></h3>
-        <h3 id="grat">Поздравляем, вы успешно повторили таблицу умножения</h3>
+            <h3 id="question"></h3>
+            <h3 id="error"></h3>
+            <h3 id="congratulations">Поздравляем, вы успешно повторили таблицу умножения</h3>
         </div>
 
         <div id="hint">
         </div>
-    <body>
     </body>
 </html>
