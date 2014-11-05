@@ -1,6 +1,9 @@
 JavaScript
 ========
 
+[Скринкаст лекции, часть 1](http://www.youtube.com/watch?v=5uPzuJTCG6U)
+
+[Скринкаст лекции, часть 2](http://www.youtube.com/watch?v=cI70gLP9DKw)
 
 План лекции
 ------
