@@ -5,7 +5,6 @@ JavaScript
 План лекции
 ------
 
-1. Обсуждение домашнего задания
 2. JavaScript: типы данных, control flow
 1. Чистый JavaScript для проверки данных в форме: [click](http://jsfiddle.net/u56uW/10/), [submit](http://jsfiddle.net/u56uW/4/)
 4. Какие бывают события на странице:
