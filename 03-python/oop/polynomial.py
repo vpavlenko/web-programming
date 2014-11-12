@@ -20,7 +20,7 @@ class Polynomial:
     >>> print(b)
     5x^2 - 1
     >>> b[0]
-    1
+    -1
     >>> b[1]
     0
     >>> b[2]
