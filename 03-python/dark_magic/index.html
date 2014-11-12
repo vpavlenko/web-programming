@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Темная магия Питона</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>Python</h2>
+					<h3>Темная магия</h3>
+					<h3></h3>
+					<p class="sub">
+						<small><a href="http://vk.com/vitalypavlenko">Виталий Павленко</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>План занятия</h2>
+					<ul>
+						<li>chr(), ord() и re.sub()</li>
+						<li>менеджеры контекста</li>
+						<li>doctest</li>
+						<li>перегрузка индексации и взятия срезов</li>
+						<li>map, filter, zip, reduce, any, all</li>
+						<li>yield-генераторы, itertools</li>
+                        <!--<div style="color: lightgray">
+                        <li>области видимости, замыкания</li>
+						<li>сериализация</li></div>-->
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>chr(), ord() и re.sub()</h2>
+                        <p>Пример из жизни на применение регулярных выражений</p>
+                        <p align="center">
+                        <a href="#" class="image navigate-down">
+                            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                        </p>
+					</section>
+
+					<section>
+						<h3>Latex не собирает &laquo;левый&raquo; файл</h3>
+
+						<p>
+							Исходный текст файла <code>bad_file.tex</code>:
+							<pre><code class="latex">\documentclass{article}
+\begin{document}
+\U{417}\U{430}\U{434}\U{430}\U{447}\U{430}\U{2116}1.
+\U{414}\U{430}\U{43d}\U{43e}:
+...</code></pre>
+						</p>
+					</section>
+
+					<section>
+						<h3>pdflatex не отрисовывает русские буквы</h3>
+						<p><img src="images/bad_file.png">
+						</p>
+					</section>
+
+					<section>
+						<h3>как выглядит годный файл?</h3>
+						<code><pre>\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+
+\begin{document}
+Тут русский текст пишется в кодировке UTF-8.
+\end{document}</code></pre>
+					</section>
+
+					<section>
+						<h3>как решить с помощью Питона?</h3>
+						<p>Напишем скрипт, который заменяет каждую секцию вида <code>\U{417}</code> на букву с соответствующим кодом
+						</p>
+						<p>Команда <code>chr()</code> возвращает символ по его номеру в юникоде
+						</p>
+						<p>Команда <code>ord()</code> получает номер по символу
+						</p>
+						<p>Команда <code>re.sub(pattern, repl, string)</code> заменяет вхождения регулярного выражения <code>pattern</code> в текст <code>string</code>. При этом <code>repl</code> может быть строкой &laquo;на что заменять&raquo; или функцией, которая вычисляет &laquo;на что заменять&raquo;.
+						</p>
+					</section>					
+
+					<section>
+						<h3>нужный скрипт</h3>
+
+
+						<code><pre>from sys import stdin, stdout
+import re
+
+def repl(match_obj):
+    return chr(match_obj.groups()[0])
+
+text = stdin.read()
+text = re.sub(r'\\U{([0-9a-f]+)}', repl, text)
+
+stdout.write(text)</code></pre>
+					</section>					
+
+
+					<section>
+						<h3>вывод скрипта</h3>
+						
+
+						<code><pre>\documentclass{article}
+\begin{document}
+
+Задачаȑ61.
+Дано:
+...</code></pre>
+					</section>	
+
+					<section>
+							<h3>выходной ПДФ</h3>
+							
+
+							<p><img src="images/good_file.png"></p>
+					</section>	
+
+
+				</section>
+
+				<section>
+					<section>
+						<h2>менеджеры контекста</h2>
+                        <p>Удобный синтаксис для получения и освобождения ресурсов</p>
+					</section>
+
+					<section>
+						<h3>пример записи в файл</h3>
+
+						<code><pre>f = open('hello.txt', 'w')
+print('Hello, world!', file=f)
+f.close()</code></pre>
+					</section>
+				
+					<section>
+						<h3>более короткая форма</h3>
+						
+						<code><pre>with open('hello.txt', 'w') as f:
+    print('Hello, world!', file=f)</code></pre>
+
+    					<p><code>.close()</code> вызовется автоматически при выходе из секции</p>
+    					<p>это эквивалент <code>try/finally</code>
+					</section>
+
+					<section>
+						<h3>как это устроено?</h3>
+						<p>файловый объект в Питоне является менеджером контекста, и его можно использовать с <code>with</code>
+						</p>
+						<p>чтобы добавить в свой класс функциональность менеджера контекста, надо определить методы
+						<code>.__enter__()</code> и <code>.__exit__()</code>
+						</p>
+					</section>
+
+					<section>
+						<h3>пример из проекта <a href="http://code.google.com/p/please/">please</a></h3>
+						<code><pre>import os
+
+class ChangeDir:
+    def __init__(self, path):
+        self.old_path = os.getcwd()
+        self.where = path
+
+    def __enter__(self):
+        if self.where:
+            os.chdir(self.where)
+        return self
+
+    def __exit__(self, type, value, traceback):
+        os.chdir(self.old_path)</code></pre>
+					</section>		
+
+
+					<section>
+						<h3>тупой пример использования класса <code>ChangeDir</code></h3>
+						<code><pre>def list_files_flat(startpath):
+    with ChangeDir(startpath):
+        for root, dirs, files in os.walk('.'):
+            for file in files:
+                path = os.path.join(root, file)[2:]
+                if path[0] != '.':
+                    print(norm(path))
+                    yield norm(path)</code></pre>
+					</section>								
+					
+
+
+				</section>
+
+
+				<section>
+					<section>
+						<h2>doctest</h3>
+                        <p>Простой и удобный способ писать тесты к коду вместе с документацией</p>
+					</section>
+
+					<section>
+						<h3>документация кода в питоне</h3>
+						<p>Если код класса или функции начинается со строки, то эта строка становится строкой документации и видна по вызову команды <code>help()</code>
+						</p>
+					</section>
+				
+					<section>
+						<h3>пример: класс <a href="http://pastebin.com/xRiqCFah">MultidimensionalFenwickTree.py</a></h3>
+						<p>
+						</p>
+
+
+						<code><pre>class MultidimensionalFenwickSumTree:
+    '''Build a multidimensional table of elements (usually numbers), 
+    providing item assignment and multidimensional range sum queries.
+    '''
+
+    def __init__(self, table):
+    	...</code></pre>
+					</section>
+
+					<section>
+						<h3>указываем в doc-строке пример использования</h3>
+				
+
+
+						<code><pre>class MultidimensionalFenwickSumTree:
+    '''Build a multidimensional table of elements (usually numbers), 
+    providing item assignment and multidimensional range sum queries.
+
+    >>> mfst = MultidimensionalFenwickSumTree([[0, 1, 2, 3], 
+    					[4, 5, 6, 7], [8, 9, 0, 1]])
+    >>> mfst
+    MultidimensionalFenwickSumTree([[0, 1, 2, 3], [4, 5, 6, 7], 
+    					[8, 9, 0, 1]])
+    >>> mfst[0:2][1:3].sum()
+    14
+    '''
+
+    def __init__(self, table):
+    	...</code></pre>
+					</section>
+
+					<section>
+						<h3>а теперь вызываем <code>doctest.testmod()</code></h3>
+						<p>Функция проходится по всем doc-строкам и тестирует код, который в них написан, на работоспособность.
+						</p>
+
+
+						<code><pre>if __name__ == '__main__':
+    import doctest
+    doctest.testmod()</code></pre>
+					</section>										
+					
+					<section>
+						<h3>&laquo;поломаем&raquo; наш код и посмотрим выдачу скрипта</h3>
+
+						<code><pre>$ ./MultidimensionalFenwickTree.py
+**********************************************************************
+File "./MultidimensionalFenwickTree.py", line 23, in __main__.MultidimensionalFenwickSumTree
+Failed example:
+    mfst[0:2][1:3].sum()
+Expected:
+    14
+Got:
+    0
+**********************************************************************
+1 items had failures:
+   1 of   3 in __main__.MultidimensionalFenwickSumTree
+***Test Failed*** 1 failure.</code></pre>
+	
+					<p>Показываются только тесты, которые завершились с ошибкой.</p>
+					</section>
+
+
+				</section>
+
+
+
+				<section>
+
+
+					<section>
+						<h2>перегрузка индексации и взятия срезов</h2>
+                        <p>Синтаксические средства для создания удобных пользовательских контейнеров</p>
+						
+					</section>
+				
+					<section>
+						<h3>возвращаемся к MultidimensionalFenwickTree.py</h3>
+						<p>Хотим, чтобы можно было обращаться к элементам.
+						</p>
+
+
+						<code><pre>>>> mfst
+MultidimensionalFenwickSumTree([[0, 1, 2, 3], 
+                                [4, 5, 6, 7], 
+                                [8, 9, 0, 1]])
+>>> mfst[0:2][1:3].sum()
+14
+>>> mfst[2][1]
+9
+>>> mfst[2][1] = 8</code></pre>
+					</section>
+
+					<section>
+						<h3>всё делается перегрузкой операторов</h3>
+						<p>За обращение по индексам отвечает метод .__getitem__()</p>
+						<p>За присваивание по индексам отвечате метод .__setitem__()</p>
+						<p>Переопределим их.
+						</p>
+
+
+						<code><pre>def __getitem__(self, index):
+    return self.SliceView(self, ())[index]
+
+def __setitem__(self, index, value):
+    self.SliceView(self, ())[index] = value</code></pre>
+					</section>
+
+					<section>
+						<h3>взятие срезов</h3>
+						<p>В параметр <code>index</code> методов <code>.__getitem__()</code> и <code>.__setitem__()</code>
+						приходит либо число типа <code>int</code>, либо срез типа <code>slice</code>.
+						</p>
+
+
+						<code><pre>>>> class Foo:
+...     def __getitem__(self, index):
+...             print(index)
+... 
+>>> a = Foo()
+>>> a[1]
+1
+>>> a[1:5]
+slice(1, 5, None)
+>>> a[1:5:-2]
+slice(1, 5, -2)</code></pre>
+					</section>
+
+					<section>
+						<h3></h3>
+						<p>Во внутреннем классе <code>SliceView</code> прописана разная логика.
+
+						<code><pre>class SliceView:
+    '''Provide access to elements and subtables of a Fenwick tree.
+    self.indices is maintained as a tuple of slice object with step == None
+    and 0 <= indices[i].start < self.mfst.length[i],
+        indices[i].start < indices[i].stop <= self.mfst.length[i].
+    '''
+
+    def __init__(self, mfst, indices, subscript=False):
+        self.mfst = mfst
+        self.indices = indices
+        self.subscript = subscript or all([isinstance(i, int) for i in indices])
+
+    def __fenwick_rec_update(self, indices, difference, level, subtable):
+        k = indices[level].start
+        while k < self.mfst.length[level]:
+            if level + 1 == self.mfst.dim:
+                subtable[k] += difference
+            else:
+                self.__fenwick_rec_update(indices, difference, level + 1, subtable[k])
+            k = k | (k + 1)
+
+    def __getitem__(self, index, value=None):
+        level = len(self.indices)
+        assert level < self.mfst.dim, 'too many levels of indices'
+
+        if isinstance(index, int):
+            if index < 0:
+                index += self.mfst.length[level]
+            index = slice(index, index + 1)
+        else:
+            self.subscript = False
+
+        if (not 0 <= index.start < self.mfst.length[level] or 
+            not index.start < index.stop <= self.mfst.length[level]):
+            raise IndexError('index out of range')
+
+        indices = self.indices + (index,)
+
+        if (level + 1 == self.mfst.dim and self.subscript):
+            tmp = self.mfst.table
+            for i in indices[:-1]:
+                tmp = tmp[i.start]
+            if value is None:
+                return tmp[indices[-1].start]
+            else:
+                difference = value - tmp[indices[-1].start]
+                tmp[indices[-1].start] = value
+
+                self.__fenwick_rec_update(indices, difference, 0, self.mfst.sum)
+        else:
+            if value is None:
+                return type(self)(self.mfst, indices, self.subscript)
+            else:
+                if level + 1 == self.mfst.dim:
+                    raise IndexError('cannot assign to a slice')
+                else:
+                    raise IndexError('not enough levels of indices')
+
+    def __setitem__(self, index, value):
+        self.__getitem__(index, value)
+
+    def __rec_prefix_sum(self, res, indices, level, subtable):
+        k = indices[level] - 1
+        while k >= 0:
+            if level + 1 == self.mfst.dim:
+                res[0] += subtable[k]
+            else:
+                self.__rec_prefix_sum(res, indices, level + 1, subtable[k])
+            k = (k & (k + 1)) - 1
+
+    def prefix_sum(self, indices):
+        res = [self.mfst.scalar_type()]
+        self.__rec_prefix_sum(res, indices, 0, self.mfst.sum)
+        return res[0]
+
+    def __rec_sum(self, res, indices, parity, level):
+        if level == self.mfst.dim:
+            res[0] += parity * self.prefix_sum(indices)
+        else:
+            indices.append(self.indices[level].start)
+            self.__rec_sum(res, indices, -parity, level + 1)
+            indices.pop()
+            indices.append(self.indices[level].stop)
+            self.__rec_sum(res, indices, parity, level + 1)
+            indices.pop()
+
+    def sum(self):
+        res = [self.mfst.scalar_type()]
+        self.__rec_sum(res, [], 1, 0)
+        return res[0]						
+						</code></pre>
+					</section>										
+				
+
+				</section>
+
+
+				<section>
+					<section>
+						<h2>map, filter, zip, reduce, any, all</h2>
+					   <p>Средства функционального стиля программирования.</p>
+					</section>
+
+					<section>
+						<h3><code>map и filter</code></h3>
+						<p>Отвечают за преобразование последовательностей. 
+
+						<code><pre>>>> from math import sqrt
+>>> list(map(sqrt, [4, 16, 32, 64]))
+[2.0, 4.0, 5.656854249492381, 8.0]
+>>> from math import log
+>>> list(map(lambda x: log(x, 2), [4, 16, 32, 64]))
+[2.0, 4.0, 5.0, 6.0]
+>>> list(filter(lambda x: x > 0, [1, -3, 4, -2, 5, 8]))
+[1, 4, 5, 8]</code></pre>
+					</section>
+				
+					<section>
+						<h3><code>map и filter: лучше не использовать</code></h3>
+						<p>Всё то же самое можно достичь конструкцией list comprehension. При этом читабельность будет выше. И не нужен лишний каст к списку. И можно совместить обе операции.
+
+						<code><pre>>>> [sqrt(x) for x in [4, 16, 32, 64]]
+[2.0, 4.0, 5.656854249492381, 8.0]
+>>> [log(x, 2) for x in [4, 16, 32, 64]]
+[2.0, 4.0, 5.0, 6.0]
+>>> [x for x in [1, -3, 4, -2, 5, 8] if x > 0]
+[1, 4, 5, 8]
+>>> [sqrt(x) for x in [1, -3, 4, -2, 5, 8] if x > 0]
+[1.0, 2.0, 2.23606797749979, 2.8284271247461903]</code></pre>
+					</section>
+
+					<section>
+                        <h3><code>map: скалярное произведение</code></h3>
+                        <code><pre>def dot_product(x, y):
+    return sum(map(lambda a, b: a * b, x, y))
+
+print(dot_product([1, 2], [3, 4]))</code></pre>
+                        <p>То же самое, но без написания своей функции:</p>
+                        <code><pre>import operator
+
+def dot_product(x, y):
+    return sum(map(operator.mul, x, y))
+
+print(dot_product([1, 2], [3, 4]))</code></pre>
+					</section>
+
+					<section>
+						<h3>zip: перебор нескольких последовательностей</h3>
+
+						<code><pre>>>> for x, y in zip([2, 3, 5, 7], 'abcd'):
+...     print(x, y)
+... 
+2 a
+3 b
+5 c
+7 d</code></pre>
+					</section>		
+
+                    <section>
+                        <h3>zip(*matrix): транспонирование</h3>
+
+                        <code><pre>>>> a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> list(zip(*a))
+[(1, 4, 7), (2, 5, 8), (3, 6, 9)]
+>>> list(zip(*list(zip(*a))))
+[(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+</code></pre>
+                    </section>  
+
+
+                    <section>
+                        <h3>reduce: цепное вычисление</h3>
+                        <p>Пусть необходимо найти побитовый xor всех чисел массива.</p>
+                        <code><pre>import operator
+from functools import reduce
+
+reduce(operator.xor, [2, 9, 33])</code></pre>
+                    </section>  
+
+
+                    <section>
+                        <h3>any и all</h3>
+                        <p><code>any</code> от последовательности равно <code>True</code>, если хотя бы один член последовательности эквивалентен <code>True</code></p>
+                        <p><code>all</code> от последовательности равно <code>True</code>, если все члены последовательности эквивалентны <code>True</code></p>
+                        <p>Дана матрица из нулей и единиц. Проверить, что в каждом столбце есть хотя бы одна единица.</p>
+<code><pre>a = [[0, 1, 0],
+     [1, 0, 0],
+     [0, 1, 1]]
+print(all(any(column) for column in zip(*rows)))</code></pre>
+                    </section>
+
+
+				</section>
+
+
+				<section>
+					<section>
+						<h2>yield-генераторы, itertools</h2>
+						<p>Средства для работы с бесконечными последовательностями.
+						</p>
+
+					</section>
+
+					<section>
+						<h3>хотим вернуть подотрезок таблицы символов</h3>
+
+						<code class="python"><pre>def str_seq(start, end):
+...     return [chr(i) for i in range(ord(start), ord(end) + 1)]
+... 
+>>> str_seq('а', 'й')
+['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й']
+>>> ''.join(str_seq('а', 'й'))
+'абвгдежзий'</code></pre>
+                        <p>Проблема: под результат создаётся промежуточный список, хотя новые буквы последовательности можно вычислять &laquo;лениво&raquo;.</p>
+					</section>
+				
+					<section>
+						<h3>однострочные генераторы вместо list comprehension</h3>
+					
+                        <p>Конструкция <code>(выражение for переменная in последовательность if условие)</code> создает генератор.</p>
+
+                        <code class="python"><pre>def str_seq(start, end):
+...     return (chr(i) for i in range(ord(start), ord(end) + 1))
+... 
+>>> str_seq('а', 'й')
+&lt;generator object &lt;genexpr&gt; at 0x7f5b7c034be0&gt;
+>>> ''.join(str_seq('а', 'й'))
+'абвгдежзий'</code></pre>
+
+                        <p>При передаче генератора в функцию внешние круглые скобки можно опускать.</p>
+                        
+					</section>
+
+                    <section>
+                        <h3>yield-генераторы</h3>
+                    
+                        <p>Синтаксис для более сложных генераторов: yield вместо return.</p>
+
+                                <code class="python"><pre>def str_seq(start, end):
+    i = ord(start)
+    while i &lt;= ord(end):
+        yield chr(i)
+        i += 1</code></pre>
+                        <p><code>yield</code> возвращает новое значение и приостанавливает работу генератора.
+                            Когда будет запрошено следующее значение генератора, работа продолжится со следующего за <code>yield</code> оператора.
+                        </p>
+                    </section>
+
+
+					<section>
+						<h3>что возвращают range, map, filter, zip?</h3>
+						<p>Не списки, а объекты, по которым можно итерироваться.
+						</p>
+
+						<code><pre>>>> range(5)
+range(0, 5)
+>>> import operator
+>>> map(operator.methodcaller('lower'), 'AbCDeF')
+&lt;map object at 0x7f0eafb4d850></code></pre>
+
+                        <p>Плюсы:
+                        <ul>
+                        <li>расходуется меньше дополнительной памяти
+                        <li><code>map</code>, <code>filter</code> и <code>zip</code> сразу умеют работать с бесконечными последовательностями
+                        </ul></p>
+					</section>
+
+                    <section>
+                        <h3>itertools.count</h3>
+                        <p><code>itertools.count([start])</code> &mdash; бесконечная последовательность натуральных чисел с некоторого места.
+                        </p>
+
+                        <code><pre>>>> import itertools
+>>> names = ['Vasya', 'Petya', 'Kolya']
+>>> for i, name in zip(itertools.count(1), names):
+...     print(i, name)
+... 
+1 Vasya
+2 Petya
+3 Kolya</code></pre>
+
+                        <p><code>zip</code> останавливается при достижении конца самой короткой последовательности. Противоположное поведение реализовано в <code>itertools.zip_longest</code></p>
+                    </section>
+
+                    <section>
+                        <h3>enumerate</h3>
+                        <p><code>enumerate</code> &mdash; сокращение для предыдущей конструкции.
+                        </p>
+
+                        <code><pre>>>> names = ['Vasya', 'Petya', 'Kolya']
+>>> for i, name in enumerate(names, 1):
+...     print(i, name)
+... 
+1 Vasya
+2 Petya
+3 Kolya</code></pre>
+                    </section> 
+
+                    <section>
+                        <h3>itertools.cycle</h3>
+                        <p><code>itertools.cycle</code> &mdash; бесконечный циклический обход последовательности
+                        </p>
+
+                        <p>На &laquo;первый-второй&raquo; рассчитайся!
+                        </p>
+
+                        <code><pre>>>> import itertools
+>>> names = ['Guido', 'Larry', 'John', 'Bjarne']
+>>> for i, name in zip(itertools.cycle([1, 2]), names):
+...     print(i, name)
+... 
+1 Guido
+2 Larry
+1 John
+2 Bjarne</code></pre>
+                    </section>  
+
+                    <section>
+                        <h3>itertools.islice: первые несколько элементов бесконечной последовательности</h3>
+
+
+                        <code><pre>>>> def fib():
+...     a, b = 1, 1
+...     yield a
+...     yield b
+...     while True:
+...             yield a + b
+...             a, b = b, a + b
+... 
+>>> itertools.islice(fib(), 20)
+&lt;itertools.islice object at 0x7f0eb1503a48>
+>>> list(itertools.islice(fib(), 10))
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]</code></pre>
+                    </section>  
+
+					<section>
+						<h3>map, filter и zip можно применять к бесконечным последовательностям</h3>
+						<p>Это имеет свои последствия. Например, обычные списки или <code>range</code>-объекты могут возвращать несколько независимых итераторов по своему содержимому, а <code>map</code> не может.
+						</p>
+
+
+						<code><pre>>>> a = range(5)
+>>> b = iter(a)
+>>> c = iter(a)
+>>> next(b)
+0
+>>> next(b)
+1
+>>> next(c)
+0
+>>> next(c)
+1</code></pre>
+					</section>										
+
+                    <section>
+                        <h3>map: единственность итератора</h3>
+                    
+
+
+                        <code><pre>>>> a = map(operator.attrgetter('imag'), [1+2j, -1-3j, 2+4j])
+>>> a
+&lt;map object at 0x7f0eaf452f50>
+>>> b = iter(a)
+>>> c = iter(a)
+>>> next(b)
+2.0
+>>> next(c)
+-3.0
+>>> next(b)
+4.0
+>>> next(c)
+Traceback (most recent call last):
+  File "&lt;stdin>", line 1, in <module>
+StopIteration
+</code></pre>
+                    </section>  
+					
+
+
+				</section>
+
+                <section>
+                    <h2>Вопросы на будущее</h2>
+                    <ul>
+                        <li>кто такие декораторы?</li>
+                        <li>какие переменные локальные, какие глобальные? что такое nonlocal?</li>
+                        <li>жива ли переменная i после цикла?</li>
+                        <li>создает ли list comprehension свой scope?</li>
+                        <li>есть ли в Питоне интерфейсы? методы класса? свойства (поля класса)?</li>
+                        <li>как объявлять именованные аргументы? как принимать их переменное число? в какой момент вычисляются их значения по умолчанию?</li>
+                    </ul>
+                </section>
+
+                <!--
+				<section>
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+				
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>										
+					
+
+
+				</section>
+
+
+				<section>
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+				
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>нужный скрипт</h3>
+						<p>
+						</p>
+
+
+						<code><pre>
+						</code></pre>
+					</section>										
+					
+
+
+				</section>																								
+
+				
+-->
+	<!-- 			<section>
+					<h2>Конец</h2>
+					<h3><a href="http://contest.mccme.ru/help/">Кратко о Питоне и Джанго</a></h3>
+				</section>
+ -->
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				rollingLinks: false,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
