@@ -64,4 +64,5 @@ Python
 3. [Пример: текущая директория и директория скрипта](paths)
 1. [Менеджеры контекста, доктесты, функциональщина](http://vpavlenko.github.io/startup-engineering/python-bis/dark_magic/)
 2. [Конспекты в интерактивном учебнике](http://pythontutor.ru/)
+3. [Минитест по Питону](https://docs.google.com/document/d/1j6pm1T_HIfwup8vp09ZEhgoLBkiW4HBX_GL1VUQC3_k/)
 3. Марк Саммерфилд. Программирование на Python 3
