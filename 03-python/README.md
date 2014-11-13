@@ -1,6 +1,10 @@
 Python
 ======================
 
+[Скринкаст первой части лекции](http://www.youtube.com/watch?v=O2k1kL1NUvs)
+
+[Скринкаст второй части лекции](http://www.youtube.com/watch?v=zZ13ZBgTjIQ)
+
 Что нужно установить
 --------
 
