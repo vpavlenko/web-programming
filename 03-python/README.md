@@ -38,6 +38,7 @@ Python
 3. [min/max, функции, lambda](python_examples_3.py)
 3. [Файловый ввод-вывод](http://pythontutor.ru/lessons/file_io/)
 6. [Объектно-ориентированное программирование](oop)
+7. [Функция cmp_to_key](comparator.py)
 
 
 Как сдавать решения
