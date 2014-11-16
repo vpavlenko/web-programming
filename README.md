@@ -34,7 +34,7 @@
 Планы на весенний семестр
 -----
 
-- Фреймворк Django (подробно): ORM, админский интерфейс, формы, регистрация пользователей, OAuth.
+- Фреймворк Django: ORM, админский интерфейс, формы, регистрация пользователей, OAuth.
 - Деплоймент на VPS: nginx, uWSGI, MySQL, logrotate, supervisor, vagrant.
 - Ajax, web sockets, API.
 - CMS: WordPress, создание интернет-магазина на WooCommerce.
