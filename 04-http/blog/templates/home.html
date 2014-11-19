@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     {% for entry in entries %}
-        <a href="post/{{ loop.index }}">
+        <a href="{{ url_for('post', post_id=loop.index) }}">
             <h3>{{ entry.title }}</h3>
         </a>
         <p>{{ entry.abstract }}</p>
@@ -10,7 +10,7 @@
     <hr>
 
     <h2>Добавить пост</h2>
-    <form method="post" action="/new_post">
+    <form method="post" action="{{ url_for('new_post') }}">
         <label>
             Заголовок поста:
             <br>

@@ -9,9 +9,9 @@ def home():
     return render_template('home.html', entries=get_entries())
 
 
-@app.route("/post/<post_id>")
+@app.route("/post/<int:post_id>")
 def post(post_id):
-    entry = get_entries()[int(post_id) - 1]
+    entry = get_entries()[post_id - 1]
     return render_template('post.html', entry=entry)
 
 
