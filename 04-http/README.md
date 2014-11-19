@@ -4,7 +4,7 @@ HTTP
 Что нужно установить
 --------
 
-С прошлого раза у вас должен быть установлен pip. С его помощью поставьте flask:
+[С прошлого раза](../03-python) у вас должен быть установлен pip. С его помощью поставьте flask:
 
     sudo pip3 install flask
 
@@ -18,16 +18,10 @@ HTTP
 3. Прикидываемся веб-сервером: ответ браузеру через `nc -l`
 1. [Что происходит при загрузке страницы](http://friendlybit.com/css/rendering-a-web-page-step-by-step/)
 2. [Реализация HTTP-протокола своими руками: веб-фреймворк на голых сокетах](https://github.com/vpavlenko/reinhardt)
+4. `python3 -m http.server`
 4. [Фреймворк Flask: routing, шаблоны. "Блог".](blog)
 5. *Тестирование Flask-приложения.
 10. *Декораторы.
-
-
-Как сдавать решения
--------------------
-
-1. Залейте решение на [gist.github.com](https://gist.github.com/)
-2. Вставьте ссылку в нужную графу в [Гуглодок с решениями](https://docs.google.com/spreadsheet/ccc?key=0AtJr69JHs0W0dDJ0Q2FPcktLZjhnOTNIdndyV2VtWHc#gid=1)
 
 
 Задание
@@ -52,3 +46,5 @@ HTTP
 Материалы
 -------------------
 1. [Туториалы и документация к Фласку.](http://flask.pocoo.org/docs/0.10/)
+2. [Маленькая статья про HTTP](http://habrahabr.ru/post/215117/)
+3. RFC 2068 про HTTP 1.1: [оригинал на английском](https://www.ietf.org/rfc/rfc2068.txt), [русский перевод](http://www.lib.ru/WEBMASTER/rfc2068/)
