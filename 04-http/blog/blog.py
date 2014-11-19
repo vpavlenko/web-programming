@@ -1,17 +1,17 @@
 from flask import Flask, render_template, redirect, request
 app = Flask(__name__)
 
-from data import entries
+from data import get_entries, add_entry
 
 
 @app.route("/")
 def home():
-    return render_template('home.html', entries=entries)
+    return render_template('home.html', entries=get_entries())
 
 
 @app.route("/post/<post_id>")
 def post(post_id):
-    entry = entries[int(post_id) - 1]
+    entry = get_entries()[int(post_id) - 1]
     return render_template('post.html', entry=entry)
 
 
@@ -20,7 +20,7 @@ def new_post():
     title = request.form['title']
     abstract = request.form['abstract']
     content = request.form['content']
-    entries.append({
+    add_entry({
         'title': title,
         'abstract': abstract,
         'content': content
