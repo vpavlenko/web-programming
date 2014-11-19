@@ -1,0 +1,6 @@
+{% for entry in entries %}
+    <a href="post/{{ loop.index }}">
+        <h2>{{ entry.title }}</h2>
+    </a>
+    <p>{{ entry.abstract }}</p>
+{% endfor %}
