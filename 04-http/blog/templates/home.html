@@ -1,30 +1,54 @@
-<form method="post" action="/new_post">
-    <label>
-        Заголовок поста:
-        <br>
-        <input type="text" name="title">
-    </label>
-    <br>
-    <label>
-        Краткое содержание:
-        <br>
-        <textarea name="abstract"></textarea>
-    </label>
-    <br>
-    <label>
-        Сам пост:
-        <br>
-        <textarea name="content"></textarea>
-    </label>
-    <br>
-    <input type="submit" value="Отправить">
-</form>
+<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<hr>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Все посты</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-{% for entry in entries %}
-    <a href="post/{{ loop.index }}">
-        <h2>{{ entry.title }}</h2>
-    </a>
-    <p>{{ entry.abstract }}</p>
-{% endfor %}
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+    {% for entry in entries %}
+        <a href="post/{{ loop.index }}">
+            <h3>{{ entry.title }}</h3>
+        </a>
+        <p>{{ entry.abstract }}</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Добавить пост</h2>
+    <form method="post" action="/new_post">
+        <label>
+            Заголовок поста:
+            <br>
+            <input type="text" name="title">
+        </label>
+        <br>
+        <label>
+            Краткое содержание:
+            <br>
+            <textarea name="abstract"></textarea>
+        </label>
+        <br>
+        <label>
+            Сам пост:
+            <br>
+            <textarea name="content"></textarea>
+        </label>
+        <br>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="static/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
