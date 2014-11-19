@@ -1,3 +1,27 @@
+<form method="post" action="/new_post">
+    <label>
+        Заголовок поста:
+        <br>
+        <input type="text" name="title">
+    </label>
+    <br>
+    <label>
+        Краткое содержание:
+        <br>
+        <textarea name="abstract"></textarea>
+    </label>
+    <br>
+    <label>
+        Сам пост:
+        <br>
+        <textarea name="content"></textarea>
+    </label>
+    <br>
+    <input type="submit" value="Отправить">
+</form>
+
+<hr>
+
 {% for entry in entries %}
     <a href="post/{{ loop.index }}">
         <h2>{{ entry.title }}</h2>
