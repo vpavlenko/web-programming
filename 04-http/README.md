@@ -1,6 +1,9 @@
 HTTP
 ======================
 
+[Скринкаст первой части лекции](http://www.youtube.com/watch?v=pOqNIscqKkk)
+[Скринкаст второй части лекции](http://www.youtube.com/watch?v=dkrRTqVC3_U)
+
 Что нужно установить
 --------
 
@@ -20,8 +23,6 @@ HTTP
 2. [Реализация HTTP-протокола своими руками: веб-фреймворк на голых сокетах](https://github.com/vpavlenko/reinhardt)
 4. `python3 -m http.server`
 4. [Фреймворк Flask: routing, шаблоны. "Блог".](blog)
-5. *Тестирование Flask-приложения.
-10. *Декораторы.
 
 
 Задание
