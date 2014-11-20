@@ -50,3 +50,4 @@ HTTP, Flask
 1. [Туториалы и документация к Фласку.](http://flask.pocoo.org/docs/0.10/)
 2. [Маленькая статья про HTTP](http://habrahabr.ru/post/215117/)
 3. RFC 2068 про HTTP 1.1: [оригинал на английском](https://www.ietf.org/rfc/rfc2068.txt), [русский перевод](http://www.lib.ru/WEBMASTER/rfc2068/)
+4. [Wappalyzer - расширение для Хрома, которое показывает веб-технологии, задействованные на текущей страничке](https://wappalyzer.com/)
