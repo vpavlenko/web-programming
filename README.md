@@ -33,6 +33,8 @@
 - CMS: WordPress, создание интернет-магазина на WooCommerce.
 - Кэширование. Безопасность. Тестирование. Очередь задач. Интернационализация.
 - MVC-фреймворк Angular.js.
-- Обзор современных фронтенд-веяний: Require.js, Normalize.css; Jade, LESS, SCSS; CoffeeScript, Dart; Bower, Grunt, Gulp.
+- Обзор современных фронтенд-веяний: Require.js, Normalize.css; Jade, LESS, Sass, Stylus; CoffeeScript, Dart; Bower, Grunt, Gulp.
 - Node.js, Express. MongoDB. Архитектура сервиса Plunker.
+- Логгирование, Яндекс.Метрика и Google Analytics.
+- Микроформаты.
 - Проектирование интерфейсов.
