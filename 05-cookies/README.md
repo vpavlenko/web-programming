@@ -25,4 +25,6 @@ Cookies, sessions, пользователи
     - Добавить возможность делать записи "только для себя" и "только для друзей"
 
 Материалы
-----
+---
+
+1. [The Flask Mega-Tutorial](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
