@@ -2,11 +2,26 @@
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-3 col-md-offset-3">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Все посты</a>
       </div>
     </div>
+    {% if login %}
+    <div class="navbar-right">
+        <form class="navbar-form" method="post" action="{{ url_for('signup') }}">
+          Вы вошли как <b>{{ login }}</b>
+          <input type="hidden" name="login" value="">
+          <button type="submit" class="btn btn-default">Выйти</button>
+        </form>
+      </div>
+    </div>
+    {% else %}
+    <form class="navbar-form navbar-right" method="post" action="{{ url_for('signup') }}">
+      <input type="text" class="form-control" placeholder="Логин" name="login">
+      <button type="submit" class="btn btn-default">Войти</button>
+    </form>
+    {% endif %}
   </div>
 </nav>
 
