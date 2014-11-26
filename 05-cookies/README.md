@@ -5,7 +5,7 @@ Cookies, sessions, пользователи
 План лекции
 -------
 
-1. Простой деплоймент: Vagrant, tmux, gunicorn. VPS, digitalocean.
+1. Простой деплоймент: Vagrant, [tmux](https://gist.github.com/henrik/1967800), [gunicorn](http://flask.pocoo.org/docs/0.10/deploying/wsgi-standalone/#gunicorn). VPS, DigitalOcean. [Github Pack](https://education.github.com/pack).
 2. Тестирование Flask-приложений.
 3. Декораторы: `functools.lru_cache`, `logging`, `counter`.
 4. Форма логина ползователя без пароля. Cookies.
@@ -23,3 +23,6 @@ Cookies, sessions, пользователи
     - Сделать правильные перенаправления
     - Добавить возможность подписываться на чужие блоги и читать ленту друзей.
     - Добавить возможность делать записи "только для себя" и "только для друзей"
+
+Материалы
+----
