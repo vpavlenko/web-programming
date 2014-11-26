@@ -5,7 +5,7 @@ Cookies, sessions, пользователи
 План лекции
 -------
 
-1. Игрушечный деплоймент: Vagrant, screen. VPS, digitalocean.
+1. Простой деплоймент: Vagrant, tmux, gunicorn. VPS, digitalocean.
 2. Тестирование Flask-приложений.
 3. Декораторы: `functools.lru_cache`, `logging`, `counter`.
 4. Форма логина ползователя без пароля. Cookies.
