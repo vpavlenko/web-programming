@@ -11,7 +11,6 @@ INIT_DATA = "[{'title': 'TITLE1', 'abstract': 'ABSTRACT1', 'content': 'CONTENT1'
 
 class BlogTestCase(unittest.TestCase):
     def setUp(self):
-        # raise Exception(data)
         self.tempfile_fd, self.tempfile_filename = tempfile.mkstemp()
         with open(self.tempfile_filename, 'w') as data_file:
             data_file.write(INIT_DATA)
@@ -26,7 +25,7 @@ class BlogTestCase(unittest.TestCase):
         self.ctx.pop()
 
     def test_blog_shows_title_and_abstract_for_post_from_init_data(self):
-        response = self.app.get('/')
+        response = self.app.get(url_for('home'))
         response_data = response.data.decode('utf-8')
         assert 'TITLE1' in response_data
         assert 'ABSTRACT1' in response_data
