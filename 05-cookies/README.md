@@ -7,6 +7,7 @@
 1. [Vagrant, tmux, gunicorn](http://www.youtube.com/watch?v=3zRuMyt7yyc)
 2. [Тестирование Flask-приложений](http://www.youtube.com/watch?v=KaGouI9ZaIo)
 3. [Travis CI](http://www.youtube.com/watch?v=oSBXaJLBErg)
+4. [Форма логина пользователя без пароля. Cookies](http://www.youtube.com/watch?v=hn_zebvViVI)
 
 План недели
 -------
