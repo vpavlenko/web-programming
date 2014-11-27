@@ -1,7 +1,12 @@
 Деплой и тестирование, Cookies, форма логина
 ======================
 
-Скоро здесь появятся скринкасты по темам недели.
+Скринкасты
+-------
+
+1. [Vagrant, tmux, gunicorn](http://www.youtube.com/watch?v=3zRuMyt7yyc)
+2. [Тестирование Flask-приложений](http://www.youtube.com/watch?v=KaGouI9ZaIo)
+3. [Travis CI](http://www.youtube.com/watch?v=oSBXaJLBErg)
 
 План недели
 -------
