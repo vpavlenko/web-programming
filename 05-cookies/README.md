@@ -1,4 +1,4 @@
-Cookies, sessions, пользователи
+Деплой и тестирование, Cookies, форма логина
 ======================
 
 Скоро здесь появятся скринкасты по темам недели.
@@ -7,8 +7,8 @@ Cookies, sessions, пользователи
 -------
 
 1. Простой деплоймент: Vagrant, [tmux](https://gist.github.com/henrik/1967800), [gunicorn](http://flask.pocoo.org/docs/0.10/deploying/wsgi-standalone/#gunicorn). VPS, DigitalOcean. [Github Pack](https://education.github.com/pack).
-2. [Тестирование Flask-приложений.](http://flask.pocoo.org/docs/0.10/testing/).
-3. Travis CI.
+2. [Тестирование Flask-приложений.](http://flask.pocoo.org/docs/0.10/testing/)
+3. Virtualenv, Travis CI.
 4. Форма логина пользователя без пароля. Cookies.
 5. Логин с паролем: как передается пароль по сети. HTTPS.
 6. Как хранить пароль: хэши, солёные хэши.
