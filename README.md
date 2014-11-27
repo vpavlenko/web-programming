@@ -1,6 +1,8 @@
 Веб-программирование на Физтехе
 ===============
 
+[![Build Status](https://travis-ci.org/vpavlenko/web-programming.svg?branch=master)](https://travis-ci.org/vpavlenko/web-programming)
+
 Спецкурс читается в МФТИ в Долгопрудном осенью 2014 и весной 2015 года. Лекции проходят по средам с 19:00 до 21:00 в аудитории 113 ГК. Первое занятие состоялось 29 октября.
 
 [Группа Вконтакте](https://vk.com/mipt_web) для срочных объявлений.
