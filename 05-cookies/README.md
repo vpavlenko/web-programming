@@ -1,7 +1,13 @@
 Деплой и тестирование, Cookies, форма логина
 ======================
 
-Скринкасты
+Скринкасты с лекции
+-----
+1. [Vagrant, tmux, gunicorn](http://www.youtube.com/watch?v=jc16ji-mFlg)
+2. [Тестирование, форма логина без пароля, декораторы](http://www.youtube.com/watch?v=fy84RjHubWE)
+
+
+Домашние скринкасты
 -------
 
 1. [Vagrant, tmux, gunicorn](http://www.youtube.com/watch?v=3zRuMyt7yyc)
