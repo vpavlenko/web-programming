@@ -45,3 +45,4 @@
 
 - [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
 - [Web Component Architecture & Development with AngularJS](https://leanpub.com/web-component-development-with-angularjs/read)
+- [Создание графических компонентов (виджетов)](http://learn.javascript.ru/widgets)
