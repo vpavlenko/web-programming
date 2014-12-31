@@ -28,14 +28,15 @@
 - Фреймворк Django (или Flask): ORM, админский интерфейс, формы, загрузка файлов, регистрация пользователей, OAuth.
 - Деплоймент на VPS: nginx, uWSGI, MySQL, logrotate, supervisor, vagrant.
 - Облачный хостинг.
-- AJAX, web sockets. Как написать http://chatvdvoem.ru/.
-- API.
+- AJAX. Web sockets. Как написать http://chatvdvoem.ru/.
+- XML/JSON API, REST.
 - CMS: WordPress, создание интернет-магазина на WooCommerce.
 - Кэширование. Безопасность. Тестирование. Очередь задач. Интернационализация.
 - MVC-фреймворк Angular.js.
+- Создание графических компонентов (виджетов). Фреймворк React.
 - Обзор современных фронтенд-веяний: Require.js, Normalize.css; Jade, LESS, Sass, Stylus; CoffeeScript, Dart; Bower, Grunt, Gulp, Yeoman.
 - Node.js, Express. MongoDB. Архитектура сервиса Plunker.
-- Логгирование, Яндекс.Метрика и Google Analytics.
+- Яндекс.Метрика и Google Analytics.
 - Микроформаты.
 - Проектирование интерфейсов.
 
