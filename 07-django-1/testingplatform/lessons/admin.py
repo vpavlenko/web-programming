@@ -1,3 +1,7 @@
 from django.contrib import admin
+import lessons.models
 
-# Register your models here.
+admin.site.register(lessons.models.Lesson)
+admin.site.register(lessons.models.Problem)
+admin.site.register(lessons.models.Submission)
+admin.site.register(lessons.models.Test)
