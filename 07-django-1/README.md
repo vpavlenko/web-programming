@@ -4,8 +4,8 @@ Django - 1
 План лекции
 -------
 
-1. Язык SQL. [UML-диаграмма для тестирующей системы.](uml-class-diagram.svg)
-2. База данных sqlite3, работа с базой sqlite3 из языка Python.
+1. Метод Аббота. UML-диаграмма.
+2. Язык SQL. База данных sqlite3, работа с базой sqlite3 из языка Python.
 3. Фреймворк Django: создание пустого приложения.
 4. Концепции: apps, urls, views, templates.
 5. Models: Django ORM.
@@ -16,10 +16,13 @@ Django - 1
 
 Пользователь заходит в систему видит набор Уроков. Каждый Урок содержит теорию и набор Задач. Каждая Задача имеет свою страницу, на которой показывается условие Задачи, формат входных и выходных данных. Пользователь может отправить Посылку по задаче. При этом Посылка будет протестирована на наборе Тестов. Если она выдаст правильные ответы на всех Тестах, то получит статус "верно", а иначе - статус "неверно". Все посылки видны пользователю на странице Задачи.
 
+![](uml-class-diagram.svg)
+
+
 Как создать Django-проект
 ---
 
-Используйте [официальный туториал](https://docs.djangoproject.com/en/1.7/intro/tutorial01/)
+Используйте [официальный туториал](https://docs.djangoproject.com/en/1.7/intro/tutorial01/).
 
 Возможно, вам понадобятся какие-то хаки при установке или настройке. Например, на Mac OS X я делал так:
 ```
@@ -28,6 +31,7 @@ alias python3="/opt/local/bin/python3.3"
 alias django-admin.py="python3 /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/django/bin/django-admin.py"
 ```
 
+Какие команды из туториала я выполнял в начале работы:
 ```
 django-admin.py startproject testingplatform
 python3 manage.py migrate
@@ -41,6 +45,8 @@ python3 manage.py check
 python3 manage.py migrate
 python3 manage.py createsuperuser
 ```
+
+Мой результат лежит [в репозитории](testingplatform).
 
 Задание
 ------
