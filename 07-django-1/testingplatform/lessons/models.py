@@ -30,15 +30,18 @@ class Test(models.Model):
 
 class Submission(models.Model):
     OK = 'OK'
-    ERROR = 'Error'
+    RE = 'RE'
+    WA = 'WA'
     STATUSES = (
-        (OK, OK),
-        (ERROR, ERROR),
+        (OK, 'Correct'),
+        (RE, 'Run-time error'),
+        (WA, 'Wrong answer'),
     )
 
     code = models.TextField()
     status = models.TextField(choices=STATUSES)
     problem = models.ForeignKey(Problem)
+    info = models.TextField(blank=True)
 
     def __str__(self):
         return '{0} (status): {1}'.format(self.problem, self.status, self.code)

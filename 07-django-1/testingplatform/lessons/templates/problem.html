@@ -4,10 +4,28 @@
 
 {{ problem.statement|safe }}
 
-<form method="post" action="#">
-    <textarea>
+<form action="{% url 'send_submission' problem.id %}" method="post">
+    {% csrf_token %}
+    <textarea name="source">
 def action(...):
-    pass
+    return ...
     </textarea>
     <input type="submit" value="Отправить на проверку">
 </form>
+
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Код</th>
+        <th>Статус</th>
+        <th>Комментарий</th>
+    </tr>
+    {% for submission in problem.submission_set.all %}
+    <tr>
+        <td>{{ submission.id }}</td>
+        <td><pre>{{ submission.code }}</pre></td>
+        <td>{{ submission.get_status_display }}</td>
+        <td>{{ submission.info }}</td>
+    </tr>
+    {% endfor %}
+</table>
