@@ -19,14 +19,14 @@ Django - 1
 Как создать Django-проект
 ---
 
+Используйте [официальный туториал](https://docs.djangoproject.com/en/1.7/intro/tutorial01/)
+
 Возможно, вам понадобятся какие-то хаки при установке или настройке. Например, на Mac OS X я делал так:
 ```
 sudo /opt/local/bin/pip-3.3 install -U django
 alias python3="/opt/local/bin/python3.3"
 alias django-admin.py="python3 /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/django/bin/django-admin.py"
 ```
-
-[Tutorial](https://docs.djangoproject.com/en/1.7/intro/tutorial01/)
 
 ```
 django-admin.py startproject testingplatform
@@ -51,8 +51,10 @@ python3 manage.py migrate
 - интернет-магазин
 - система для проведения онлайн-курсов
 
-1. Определите схему базы данных.
-2. Создайте Django-приложение с несколькими страницами. Реализуйте минимальный функционал вашего проекта.
+1. Напишите описание функционала вашего проекта (абзац текста). Сущности выделяйте большой буквой для наглядности.
+2. Нарисуйте UML-диаграмму классов вашего проекта в [draw.io](https://drive.draw.io/). Слева ищите блок инструментов UML. Экспортируйте диаграмму в какой-нибудь формат.
+3. Создайте Django-приложение с несколькими страницами. Реализуйте минимальный функционал вашего проекта.
+4. Выложите это как гит-репозиторий и добавьте ссылку на [вики-страницу для решений](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
 
 
 Материалы
