@@ -1,0 +1,13 @@
+<a href="{% url 'lesson' problem.lesson.id %}">Урок {{ problem.lesson.id }}: {{ problem.lesson.title }}</a>
+
+<h1>Задача "{{ problem.title }}"</h1>
+
+{{ problem.statement|safe }}
+
+<form method="post" action="#">
+    <textarea>
+def action(...):
+    pass
+    </textarea>
+    <input type="submit" value="Отправить на проверку">
+</form>

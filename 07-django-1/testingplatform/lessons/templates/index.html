@@ -1,0 +1,8 @@
+<h1>Учебник Питона</h1>
+
+Уроки:
+<ul>
+    {% for lesson in lessons %}
+    <li><a href="{% url 'lesson' lesson.id %}">{{ lesson.title }}</a></li>
+    {% endfor %}
+</ul>
