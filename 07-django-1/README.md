@@ -1,6 +1,8 @@
 Django - 1
 ======================
 
+[Скринкаст лекции](http://www.youtube.com/watch?v=AcylLYyRuKw)
+
 План лекции
 -------
 
