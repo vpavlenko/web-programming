@@ -16,6 +16,31 @@ Django - 1
 
 Пользователь заходит в систему видит набор Уроков. Каждый Урок содержит теорию и набор Задач. Каждая Задача имеет свою страницу, на которой показывается условие Задачи, формат входных и выходных данных. Пользователь может отправить Посылку по задаче. При этом Посылка будет протестирована на наборе Тестов. Если она выдаст правильные ответы на всех Тестах, то получит статус "верно", а иначе - статус "неверно". Все посылки видны пользователю на странице Задачи.
 
+Как создать Django-проект
+---
+
+Возможно, вам понадобятся какие-то хаки при установке или настройке. Например, на Mac OS X я делал так:
+```
+sudo /opt/local/bin/pip-3.3 install -U django
+alias python3="/opt/local/bin/python3.3"
+alias django-admin.py="python3 /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/django/bin/django-admin.py"
+```
+
+[Tutorial](https://docs.djangoproject.com/en/1.7/intro/tutorial01/)
+
+```
+django-admin.py startproject testingplatform
+python3 manage.py migrate
+python3 manage.py runserver
+python3 manage.py startapp lessons
+# ...
+# Some changes to to lessons/models.py
+# ...
+python3 manage.py makemigrations
+python3 manage.py check
+python3 manage.py migrate
+```
+
 Задание
 ------
 
@@ -34,3 +59,4 @@ Django - 1
 ---
 
 1. The Django Book: [оригинал](http://www.djangobook.com/en/2.0/index.html), [перевод](http://djbook.ru/rel1.7/)
+2. Пример большого проекта на Джанге: [блог-платформа pybbm](https://github.com/hovel/pybbm)
