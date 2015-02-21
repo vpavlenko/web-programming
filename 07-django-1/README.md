@@ -75,5 +75,6 @@ python3 manage.py createsuperuser
 Материалы
 ---
 
+1. [Django tutorial: Writing your first Django app](https://docs.djangoproject.com/en/1.7/intro/tutorial01/)
 1. The Django Book: [оригинал](http://www.djangobook.com/en/2.0/index.html), [перевод](http://djbook.ru/rel1.7/)
 2. Пример большого проекта на Джанге: [блог-платформа pybbm](https://github.com/hovel/pybbm)
