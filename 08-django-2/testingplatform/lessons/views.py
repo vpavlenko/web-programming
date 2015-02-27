@@ -1,3 +1,5 @@
+import json
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from lessons.models import Lesson, Problem
@@ -25,3 +27,24 @@ def send_submission(request, problem_id):
     source = request.POST['source']
     test_submission(problem, source)
     return redirect('problem', problem_id=problem.id)
+
+
+def load_submissions(request):
+    '''
+    Ajax request.
+
+    Params:
+        problem_id
+
+    Return: {
+        'submissions': ...
+    }
+    '''
+    problem = Problem.objects.get(id=int(request.GET['problem_id']))
+    submissions_json = [submission.as_dict()
+                        for submission in problem.submission_set.all()]
+    response_data = {
+        'submissions': submissions_json
+    }
+
+    return HttpResponse(json.dumps(response_data), content_type="application/json")

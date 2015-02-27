@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
+<input type="hidden" id="problem_id" value="{{ problem.id }}">
+
 <a href="{% url 'lesson' problem.lesson.id %}">Урок {{ problem.lesson.id }}: {{ problem.lesson.title }}</a>
 
 <h1>Задача "{{ problem.title }}"</h1>
@@ -16,20 +19,10 @@ def action(...):
     <input type="submit" class="button" value="Отправить на проверку">
 </form>
 
-<table border="1">
-    <tr>
-        <th>#</th>
-        <th>Код</th>
-        <th>Статус</th>
-        <th>Комментарий</th>
-    </tr>
-    {% for submission in problem.submission_set.all %}
-    <tr>
-        <td>{{ submission.id }}</td>
-        <td><pre>{{ submission.code }}</pre></td>
-        <td>{{ submission.get_status_display }}</td>
-        <td>{{ submission.info }}</td>
-    </tr>
-    {% endfor %}
+<table id="submissions" border="1">
 </table>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'lessons/load_submissions.js' %}"></script>
 {% endblock %}

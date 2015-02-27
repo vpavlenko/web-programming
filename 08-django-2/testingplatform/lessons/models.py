@@ -45,3 +45,11 @@ class Submission(models.Model):
 
     def __str__(self):
         return '{0} (status): {1}'.format(self.problem, self.status, self.code)
+
+    def as_dict(self):
+        return {
+            'id': self.id,
+            'code': self.code,
+            'status': self.get_status_display(),
+            'info': self.info,
+        }
