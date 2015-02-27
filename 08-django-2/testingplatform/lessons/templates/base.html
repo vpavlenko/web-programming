@@ -6,6 +6,19 @@
 <script src="{% static 'lessons/modernizr.js' %}"></script>
 
 <nav class="top-bar" data-topbar role="navigation">
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      {% if not user.is_anonymous %}
+      <li><a href="#">{{ user }}</a></li>
+      <li><a href="{% url 'logout' %}">Выйти</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Войти</a></li>
+      {% endif %}
+    </ul>
+
+  </section>
+
   <ul class="title-area">
     <li class="name">
       <h1><a href="{% url 'index' %}">Учебник Питона</a></h1>
