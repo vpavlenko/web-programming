@@ -1,0 +1,33 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'lessons/normalize.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'lessons/foundation.min.css' %}" />
+
+<script src="{% static 'lessons/modernizr.js' %}"></script>
+
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Учебник Питона</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<div class="row">
+  <div class="small-0 large-2 columns"></div>
+  <div class="small-12 large-8 columns">
+    <h1>Уроки</h1>
+    <ul>
+        {% for lesson in lessons %}
+        <li><a href="{% url 'lesson' lesson.id %}">{{ lesson.title }}</a></li>
+        {% endfor %}
+    </ul>
+  </div>
+  <div class="small-0 large-2 columns"></div>
+</div>
+
+<script src="{% static 'lessons/jquery.js' %}"></script>
+<script src="{% static 'lessons/foundation.min.js' %}"></script>
+<script>
+    $(document).foundation();
+</script>

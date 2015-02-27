@@ -1,0 +1,12 @@
+<a href="{% url 'index' %}">Уроки</a>
+
+<h1>Урок {{ lesson.id }}: {{ lesson.title }}</h1>
+
+{{ lesson.content|safe }}
+
+Задачи:
+<ul>
+    {% for problem in lesson.problem_set.all %}
+    <li><a href='{% url 'problem' problem.id %}'>{{ problem.title }}</a></li>
+    {% endfor %}
+</ul>
