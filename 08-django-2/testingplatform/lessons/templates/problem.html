@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 <a href="{% url 'lesson' problem.lesson.id %}">Урок {{ problem.lesson.id }}: {{ problem.lesson.title }}</a>
 
 <h1>Задача "{{ problem.title }}"</h1>
@@ -6,11 +9,11 @@
 
 <form action="{% url 'send_submission' problem.id %}" method="post">
     {% csrf_token %}
-    <textarea name="source">
+    <textarea name="source" cols="100" rows="10">
 def action(...):
     return ...
     </textarea>
-    <input type="submit" value="Отправить на проверку">
+    <input type="submit" class="button" value="Отправить на проверку">
 </form>
 
 <table border="1">
@@ -29,3 +32,4 @@ def action(...):
     </tr>
     {% endfor %}
 </table>
+{% endblock %}
