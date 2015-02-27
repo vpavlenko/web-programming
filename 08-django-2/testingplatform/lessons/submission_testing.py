@@ -6,7 +6,7 @@ def is_correst_answer_on_test(function, test):
     return str(output) == test.answer
 
 
-def test_submission(problem, source):
+def test_submission(problem, source, user):
     info = ''
 
     try:
@@ -22,4 +22,4 @@ def test_submission(problem, source):
         status = Submission.RE
         info = str(e)
 
-    Submission(code=source, status=status, problem=problem, info=info).save()
+    Submission(code=source, status=status, problem=problem, info=info, user=user).save()

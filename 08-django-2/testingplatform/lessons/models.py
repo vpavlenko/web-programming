@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Lesson(models.Model):
@@ -42,6 +43,7 @@ class Submission(models.Model):
     status = models.TextField(choices=STATUSES)
     problem = models.ForeignKey(Problem)
     info = models.TextField(blank=True)
+    user = models.ForeignKey(User, null=True)
 
     def __str__(self):
         return '{0} (status): {1}'.format(self.problem, self.status, self.code)
@@ -52,4 +54,5 @@ class Submission(models.Model):
             'code': self.code,
             'status': self.get_status_display(),
             'info': self.info,
+            'user': str(self.user),
         }

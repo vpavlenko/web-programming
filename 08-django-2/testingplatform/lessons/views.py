@@ -1,4 +1,5 @@
 import json
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
@@ -22,10 +23,11 @@ def problem(request, problem_id):
     return render(request, 'problem.html', {'problem': problem, 'tests': tests})
 
 
+@login_required
 def send_submission(request, problem_id):
     problem = Problem.objects.get(id=problem_id)
     source = request.POST['source']
-    test_submission(problem, source)
+    test_submission(problem, source, request.user)
     return redirect('problem', problem_id=problem.id)
 
 
