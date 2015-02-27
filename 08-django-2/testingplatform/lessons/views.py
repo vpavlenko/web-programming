@@ -2,6 +2,8 @@ import json
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
 
 from lessons.models import Lesson, Problem
 from lessons.submission_testing import test_submission
@@ -50,3 +52,17 @@ def load_submissions(request):
     }
 
     return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            new_user.authenticate
+            return HttpResponseRedirect("/")
+    else:
+        form = UserCreationForm()
+    return render(request, "register.html", {
+        'form': form,
+    })
