@@ -19,6 +19,7 @@ def lesson(request, lesson_id):
     return render(request, 'lesson.html', {'lesson': lesson})
 
 
+@login_required(login_url='/login')
 def problem(request, problem_id):
     problem = Problem.objects.get(id=problem_id)
     tests = problem.test_set.order_by('number')
@@ -51,7 +52,8 @@ def load_submissions(request):
         'submissions': submissions_json
     }
 
-    return HttpResponse(json.dumps(response_data), content_type="application/json")
+    return HttpResponse(json.dumps(response_data),
+                        content_type="application/json")
 
 
 def register(request):
@@ -59,7 +61,6 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            new_user.authenticate
             return HttpResponseRedirect("/")
     else:
         form = UserCreationForm()

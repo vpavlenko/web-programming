@@ -44,6 +44,7 @@ class Submission(models.Model):
     problem = models.ForeignKey(Problem)
     info = models.TextField(blank=True)
     user = models.ForeignKey(User, null=True)
+    time = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return '{0} (status): {1}'.format(self.problem, self.status, self.code)
