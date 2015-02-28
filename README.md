@@ -30,9 +30,7 @@
 
 **27 февраля.** [Django: статика, регистрация пользователей, ajax, JSON API, загрузка файлов, навигация](08-django-2)
 
-**23-28 февраля.** Деплоймент за nginx: MySQL, supervisor, logrotate. Очередь задач: celery. Регистрация через соцсети: OAuth
-
-**1-8 марта.** WordPress, создание интернет-магазина на WooCommerce
+**6 марта.** [Деплоймент за nginx: MySQL, supervisor, logrotate. Очередь задач: celery.](09-django-deploy)
 
 **9-15 марта.** Вёрстка: сетки, позиционирование. Декоративные элементы. Меню: вёрстка
 
@@ -58,9 +56,14 @@
 Пул тем
 -----
 
+- WordPress, создание интернет-магазина на WooCommerce
 - Web Components, Polymer.
 - Обзор современных фронтенд-веяний: Require.js, Normalize.css; Jade, LESS, Sass, Stylus; CoffeeScript, Dart; Bower, Grunt, Gulp, Yeoman.
 - Проектирование интерфейсов.
+- Вёрстка писем.
+- Полнотекстовый поиск.
+- Плагины для браузеров. Bookmarklets.
+- Авторизация через соцсети.
 
 
 Материалы
