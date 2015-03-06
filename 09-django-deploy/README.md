@@ -1,6 +1,8 @@
 Django: деплой
 ======================
 
+[Скринкаст лекции](http://www.youtube.com/watch?v=EBrxoe1oKEc)
+
 План лекции
 -------
 
@@ -10,11 +12,12 @@ Django: деплой
 5. Настройка логгирования. [Logrotate](http://linuxnow.ru/view.php?id=50). [Sentry](https://getsentry.com/welcome/).
 5. Стратегии выкатывания новых версий: гит, тар, деб-пакеты. Deployment keys.
 7. [Deployment checklist](https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/). Разделение настроек для тестирования/продакшна.
-9. Что такое очередь задач. [Celery](http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html).
 
 
 Что делать после получения ssh-доступа к серверу
 ---
+
+[Официальный туториал от uWSGI.](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html) [Перевод этого туториала на Хабре.](http://habrahabr.ru/post/226419/)
 
 Я разворачивал DigitalOcean Droplet Ubuntu 14.04 x64. Сайт доступен тут:
 [178.62.210.172](http://178.62.210.172/). Репозиторий доступен тут:
@@ -103,6 +106,7 @@ touch /etc/uwsgi/vassals/testingplatform_uwsgi.ini
 ```
 python manage.py dumpdata > datadump.json
 ```
+
 **Шаг 2.** Выполняется с новыми настройками DATABASES в settings.py
 ```
 python manage.py loaddata datadump.json
@@ -129,6 +133,8 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE testingplatform TO django;
 source /home/django/venv/bin/activate
 pip install psycopg2
 ```
+
+
 
 Начало настройки базы MySQL (читайте с конца)
 ---
@@ -174,7 +180,6 @@ python manage.py migrate
 
 Продолжайте развивать проект, который вы начали делать в прошлый раз.
 
-1. Задеплойте ваше приложение на VPS-сервер. В [Github Pack](https://education.github.com/pack) есть промокод для DigitalOcean, который позволит бесплатно держать вам сервер за 10$ в течение 10 месяцев. Если у вас нет возможности использовать Github Pack, то можете использовать [Amazon Web Services (AWS)](http://aws.amazon.com/ru/free/). На продукте Elastic Cloud 2 (EC2) всем новым пользователям дают бесплатно один год использования виртуального сервера типа t2.micro.
-2. Выделите задачу, которую стоит отложить для очереди задач. Это может быть, например, рассылка писем или индексация для полнотекстового поиска. Реализуйте и задеплойте её.
+Задеплойте ваше приложение на VPS-сервер. В [Github Pack](https://education.github.com/pack) есть промокод для DigitalOcean, который позволит бесплатно держать вам сервер за 10$ в течение 10 месяцев. Если у вас нет возможности использовать Github Pack, то можете использовать [Amazon Web Services (AWS)](http://aws.amazon.com/ru/free/). На продукте Elastic Cloud 2 (EC2) всем новым пользователям дают бесплатно один год использования виртуального сервера типа t2.micro.
 
-Залейте изменения в тот же репозиторий и отпишитесь [на странице результатов](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
+Отпишитесь [на странице результатов](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
