@@ -7,7 +7,10 @@ Django: деплой
 1. Настройка связки nginx <-> uWSGI.
 4. Настраиваем PostgreSQL. Переносим данные между базами.
 3. Зависимости: requirements.txt.
-5. Что такое logrotate.
+5. Настройка логгирования.
+5. Стратегии выкатывания новых версий.
+7. Разделение настроек для тестирования/продакшна.
+6. Deployment keys.
 6. Очередь задач celery: применение, деплой.
 
 
@@ -15,7 +18,8 @@ Django: деплой
 ---
 
 Я разворачивал DigitalOcean Droplet Ubuntu 14.04 x64. Сайт доступен тут:
-[178.62.210.172](http://178.62.210.172/)
+[178.62.210.172](http://178.62.210.172/). Репозиторий доступен тут:
+[https://bitbucket.org/cxielamiko/testingplatform](https://bitbucket.org/cxielamiko/testingplatform)
 
 ```
 sudo apt-get update
@@ -59,11 +63,25 @@ tar xvf testingplatform.tar
 
 Дальше всё по туториалу
 http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html
+([вот перевод на русский язык](http://habrahabr.ru/post/226419/))
 
 Симлинк `/etc/nginx/sites-enabled/default` можно удалить.
 
-Настройте, чтобы uWSGI стартовал при ребуте. Сначала подумайте, не сломали
-ли вы конфиги ssh так, что после ребута вы потеряете доступ к серверу.
+Настройте, чтобы uWSGI стартовал при ребуте.
+Сначала проверьте, что uWSGI можно запустить таким образом:
+```
+/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals --uid django --gid django --daemonize /var/log/uwsgi.log
+```
+
+При этом откройте в соседней панели `tmux` лог:
+```
+tail -f /var/log/uwsgi.log
+```
+
+Зайдите в браузере на ваш сайт. Посмотрите, что заход отражается в логах.
+
+После этого добавьте строку запуска uWSGI в `/etc/rc.local/` перед `exit 0`.
+
 Для ребута сервера используйте
 ```
 sudo shutdown -r now
@@ -165,6 +183,6 @@ python manage.py migrate
 Материалы
 ----
 
-- [Setting up Django and your web server with uWSGI and nginx](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html), [перевод](http://habrahabr.ru/post/226419/)
 - [Django deployment checklist](https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/)
+- [Ротация логов с помощью logrotate](http://linuxnow.ru/view.php?id=50)
 - [OpenSSH server security practices](http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html)
