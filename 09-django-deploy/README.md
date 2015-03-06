@@ -4,12 +4,153 @@ Django: деплой
 План лекции
 -------
 
-1. Настройка веб-сервера nginx на статику.
-2. Деплой Джанги: uwsgi, gunicorn.
-3. Зачем нужен supervisor.
-4. Настраиваем MySQL.
+1. Настройка связки nginx <-> uWSGI.
+4. Настраиваем PostgreSQL. Переносим данные между базами.
+3. Зависимости: requirements.txt.
 5. Что такое logrotate.
 6. Очередь задач celery: применение, деплой.
+
+
+Что делать после получения ssh-доступа к серверу
+---
+
+Я разворачивал DigitalOcean Droplet Ubuntu 14.04 x64. Сайт доступен тут:
+[178.62.210.172](http://178.62.210.172/)
+
+```
+sudo apt-get update
+
+# Решить проблему с локалью:
+# http://la2ha.ru/dev/notes/setting_locale_failed
+
+adduser django
+sudo apt-get install python3-dev python3-setuptools
+sudo easy_install-3.4 virtualenv
+
+sudo apt-get install nginx
+```
+
+Теперь наберите в браузере адрес вашего сервера. Вы должны увидеть домашнюю
+страницу nginx.
+
+Обычно, версия nginx, которую можно поставить через aptitude, очень старая,
+поэтому рекомендуется поставить свежую с официального сайта самостоятельно.
+
+Когда вы меняете конфиги сервера, перезапускайте его:
+```
+sudo service nginx restart
+```
+
+Cоздайте виртуальное окружение
+```
+virtualenv venv
+```
+
+Теперь как-нибудь перенесите на сервер своё приложение. Например, запакуйте
+его через
+```
+tar cvf testingplatform.tar testingplatform
+```
+пошарьте через Дропбокс, затем на сервере скажите
+```
+wget http://dl.dropbox.com/some/path/testingplatform.tar
+tar xvf testingplatform.tar
+```
+
+Дальше всё по туториалу
+http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html
+
+Симлинк `/etc/nginx/sites-enabled/default` можно удалить.
+
+Настройте, чтобы uWSGI стартовал при ребуте. Сначала подумайте, не сломали
+ли вы конфиги ssh так, что после ребута вы потеряете доступ к серверу.
+Для ребута сервера используйте
+```
+sudo shutdown -r now
+```
+
+При возникновении проблем с `/etc/rc.local` используйте совет по дебагу:
+http://serverfault.com/a/391499
+
+Для перезагрузки uWSGI сделайте touch конфигу:
+```
+touch /etc/uwsgi/vassals/testingplatform_uwsgi.ini
+```
+
+
+
+Перенос данных из одной базы в другую
+---
+
+**Шаг 1.** Выполняется со старыми настройками DATABASES в settings.py
+```
+python manage.py dumpdata > datadump.json
+```
+**Шаг 2.** Выполняется с новыми настройками DATABASES в settings.py
+```
+python manage.py loaddata datadump.json
+```
+
+
+
+Настройка базы PostgreSQL
+---
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-django-with-postgres-nginx-and-gunicorn
+
+```
+sudo apt-get install libpq-dev postgresql postgresql-contrib
+su - postgres
+createdb testingplatform
+createuser -P django
+psql
+postgres=# GRANT ALL PRIVILEGES ON DATABASE testingplatform TO django;
+```
+
+Теперь выполняем из-под пользователя django
+```
+source /home/django/venv/bin/activate
+pip install psycopg2
+```
+
+Начало настройки базы MySQL
+---
+
+```
+# Установка базы
+sudo apt-get install mysql-server-5.6 libmysqlclient-dev
+source venv/bin/activate
+pip install mysqlclient
+# Проблема установки появляется из-за нехватки оперативной памяти.
+# Решение: добавить больше памяти или создать своп-раздел.
+# http://askubuntu.com/questions/457923/why-did-installation-of-mysql-5-6-on-ubuntu-14-04-fail
+
+# Далее создаём базу для приложения и настраиваем пользователя и права:
+mysql -p
+mysql> CREATE DATABASE testingplatform;
+mysql> CREATE USER 'django'@'localhost' IDENTIFIED BY 'Aelaef0l';
+mysql> GRANT ALL PRIVILEGES ON testingplatform.* TO 'django'@'localhost';
+mysql> FLUSH PRIVILEGES;
+
+# Дописываем настройки в settings.py:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'testingplatform',
+        'USER': 'django',
+        'PASSWORD': 'Aelaef0l',
+    }
+}
+
+# Создаём все таблицы в новой базе
+python manage.py migrate
+
+# На этапе переноса данных я поймал проблемы с Юникодом в MySQL.
+# Подробности:
+# http://stackoverflow.com/a/20349552
+# https://mathiasbynens.be/notes/mysql-utf8mb4
+```
+
 
 Задание
 ------
@@ -20,3 +161,10 @@ Django: деплой
 2. Выделите задачу, которую стоит отложить для очереди задач. Это может быть, например, рассылка писем или индексация для полнотекстового поиска. Реализуйте и задеплойте её.
 
 Залейте изменения в тот же репозиторий и отпишитесь [на странице результатов](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
+
+Материалы
+----
+
+- [Setting up Django and your web server with uWSGI and nginx](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html), [перевод](http://habrahabr.ru/post/226419/)
+- [Django deployment checklist](https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/)
+- [OpenSSH server security practices](http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html)
