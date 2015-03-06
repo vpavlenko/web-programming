@@ -6,11 +6,11 @@ Django: деплой
 
 1. Настройка связки nginx <-> uWSGI.
 4. Настраиваем PostgreSQL. Переносим данные между базами.
-3. Зависимости: requirements.txt.
-5. Настройка логгирования. [Sentry](https://getsentry.com/welcome/).
+3. Virtualenv, requirements.txt.
+5. Настройка логгирования. [Logrotate](http://linuxnow.ru/view.php?id=50). [Sentry](https://getsentry.com/welcome/).
 5. Стратегии выкатывания новых версий: гит, тар, деб-пакеты. Deployment keys.
-7. Разделение настроек для тестирования/продакшна.
-9. Что такое очередь задач.
+7. [Deployment checklist](https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/). Разделение настроек для тестирования/продакшна.
+9. Что такое очередь задач. [Celery](http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html).
 
 
 Что делать после получения ssh-доступа к серверу
@@ -178,10 +178,3 @@ python manage.py migrate
 2. Выделите задачу, которую стоит отложить для очереди задач. Это может быть, например, рассылка писем или индексация для полнотекстового поиска. Реализуйте и задеплойте её.
 
 Залейте изменения в тот же репозиторий и отпишитесь [на странице результатов](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
-
-Материалы
-----
-
-- [Django deployment checklist](https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/)
-- [Ротация логов с помощью logrotate](http://linuxnow.ru/view.php?id=50)
-- [OpenSSH server security practices](http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html)

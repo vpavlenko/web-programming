@@ -73,3 +73,4 @@
 - [Web Component Architecture & Development with AngularJS](https://leanpub.com/web-component-development-with-angularjs/read)
 - [Создание графических компонентов (виджетов)](http://learn.javascript.ru/widgets)
 - [Scalable and Modular Architecture for CSS](https://smacss.com/)
+- [Какие фреймворки используются на популярных сайтах](https://docs.google.com/spreadsheets/d/1OChsdXnXY8mTums6BhzrIvjTiDbJLry5QTSJkxf8OmY/edit#gid=0)
