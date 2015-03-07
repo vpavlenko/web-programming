@@ -32,23 +32,17 @@
 
 **6 марта.** [Деплоймент: nginx, uWSGI, PostgreSQL, logrotate](09-django-deploy)
 
-**16-22 марта.** Графические компоненты (виджеты)
+**13 марта.** [Графические компоненты (виджеты)](10-widgets)
 
 **23-31 марта.** Автоматизация фронтенда: Bower, Grunt, JSHint, LESS
 
 **1-5 апреля.** Node.js, WebSockets, MongoDB. Чат
 
-**20-26 апреля.** React.js
-
 **6-12 апреля.** Облачный хостинг: heroku
 
 **13-19 апреля.** Single page application: Angular.js/Backbone.js
 
-**27-30 апреля.** Читаем чужой код: сервис Plunker
-
-**1-10 мая.** Яндекс.Метрика. Микроформаты
-
-**11-17 мая.** Кеширование. Безопасность. Тестирование. Интернационализация
+**20-26 апреля.** React.js
 
 
 Пул тем
@@ -56,7 +50,7 @@
 
 - WordPress, создание интернет-магазина на WooCommerce
 - Web Components, Polymer.
-- Обзор современных фронтенд-веяний: Require.js, Normalize.css; Jade, LESS, Sass, Stylus; CoffeeScript, Dart; Bower, Grunt, Gulp, Yeoman.
+- Обзор современных фронтенд-веяний: Normalize.css; Jade, Sass, Stylus; CoffeeScript, Dart; Gulp, Yeoman.
 - Проектирование интерфейсов.
 - Вёрстка писем.
 - Полнотекстовый поиск.
@@ -64,6 +58,10 @@
 - Авторизация через соцсети.
 - Очередь задач: celery.
 - Вёрстка: сетки, позиционирование. Декоративные элементы. Меню: вёрстка
+- Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход
+- Читаем чужой код: сервис Plunker
+- Яндекс.Метрика. Микроформаты
+- Кеширование. Безопасность. Тестирование. Интернационализация
 
 
 Материалы
@@ -71,6 +69,5 @@
 
 - [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
 - [Web Component Architecture & Development with AngularJS](https://leanpub.com/web-component-development-with-angularjs/read)
-- [Создание графических компонентов (виджетов)](http://learn.javascript.ru/widgets)
 - [Scalable and Modular Architecture for CSS](https://smacss.com/)
 - [Какие фреймворки используются на популярных сайтах](https://docs.google.com/spreadsheets/d/1OChsdXnXY8mTums6BhzrIvjTiDbJLry5QTSJkxf8OmY/edit#gid=0)
