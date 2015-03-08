@@ -135,6 +135,30 @@ touch /etc/uwsgi/vassals/testingplatform_uwsgi.ini
 
 
 
+Настройка базы PostgreSQL
+---
+
+Всё можно сделать по этой статье: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-django-with-postgres-nginx-and-gunicorn
+
+Вводим в терминале из-под рута:
+
+```
+apt-get install libpq-dev postgresql postgresql-contrib
+su - postgres
+createdb testingplatform
+createuser -P django
+psql
+postgres=# GRANT ALL PRIVILEGES ON DATABASE testingplatform TO django;
+```
+
+Теперь выполняем из-под пользователя django:
+```
+source /home/django/venv/bin/activate
+pip install psycopg2
+```
+
+
+
 Перенос данных из одной базы в другую
 ---
 
@@ -150,29 +174,8 @@ python manage.py loaddata datadump.json
 
 
 
-Настройка базы PostgreSQL
----
 
-https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-django-with-postgres-nginx-and-gunicorn
-
-```
-sudo apt-get install libpq-dev postgresql postgresql-contrib
-su - postgres
-createdb testingplatform
-createuser -P django
-psql
-postgres=# GRANT ALL PRIVILEGES ON DATABASE testingplatform TO django;
-```
-
-Теперь выполняем из-под пользователя django
-```
-source /home/django/venv/bin/activate
-pip install psycopg2
-```
-
-
-
-Начало настройки базы MySQL (читайте с конца)
+Неоконченная попытка настроить MySQL
 ---
 
 ```
