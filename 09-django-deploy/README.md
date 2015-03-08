@@ -105,10 +105,11 @@ tar xvf testingplatform.tar
 
 **Шаг 6. Настройка автостарта сервера**
 
-Настройте, чтобы uWSGI стартовал при ребуте.
+nginx автоматически стартует при ребуте. Настройте, чтобы uWSGI также делал это.
+
 Сначала проверьте, что uWSGI можно запустить таким образом:
 ```
-/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals --uid django --gid django --daemonize /var/log/uwsgi.log
+/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals --daemonize /var/log/uwsgi.log
 ```
 
 При этом откройте в соседней панели `tmux` лог:
@@ -116,19 +117,47 @@ tar xvf testingplatform.tar
 tail -f /var/log/uwsgi.log
 ```
 
-Зайдите в браузере на ваш сайт. Посмотрите, что заход отражается в логах.
+Зайдите в браузере на ваш сайт. Посмотрите, что заход отражается в логах. Прибейте uwsgi: найдите номер мастер-процесс
+через `ps` и выполните для него `kill`:
+```
+root@django-deployment-example:~# ps aux | grep emperor
+root       837  0.0  0.1  34268   860 ?        S    11:10   0:00 uwsgi --emperor /etc/uwsgi/vassals --die-on-term --daemonize /var/log/uwsgi.log
+root      1398  0.0  0.1  11760   940 pts/0    S+   11:16   0:00 grep --color=auto emperor
+root@django-deployment-example:~# kill -9 837
+root@django-deployment-example:~# ps aux | grep emperor
+root      1430  0.0  0.1  11756   944 pts/0    S+   11:17   0:00 grep --color=auto emperor
+root@django-deployment-example:~#
+```
 
-После этого добавьте строку запуска uWSGI в `/etc/rc.local` перед `exit 0`.
+Туториал по uWSGI предлагает добавить строку запуска uWSGI в `/etc/rc.local` перед `exit 0`.
+[В этой статье](http://bencane.com/2011/12/30/when-its-ok-and-not-ok-to-use-rc-local/)
+объясняется, почему так не стоит делать.
+
+Вместо этого давайте использовать механизм Upstart старта сервисов в Убунте.
+Создайте скрипт `/etc/init/uwsgi.conf` с содержимым
+```
+# simple uWSGI script
+
+description "uwsgi tiny instance"
+start on runlevel [2345]
+stop on runlevel [06]
+
+exec uwsgi --emperor /etc/uwsgi/vassals --die-on-term --daemonize /var/log/uwsgi.log
+```
 
 Для ребута сервера используйте
 ```
 sudo shutdown -r now
 ```
 
-При возникновении проблем с `/etc/rc.local` используйте совет по дебагу:
-http://serverfault.com/a/391499
+Хотя выше приведён способ [из официального туториала](http://uwsgi-docs.readthedocs.org/en/latest/Upstart.html),
+мне не кажется, что он корректно работает. Например, стопнуть сервис таким образом не получается:
+```
+root@django-deployment-example:~# stop uwsgi
+stop: Unknown instance: 
+```
 
-Для перезагрузки uWSGI сделайте touch конфигу:
+Если вы сделали изменения в Django-коде, то рестартовать uWSGI можно так:
 ```
 touch /etc/uwsgi/vassals/testingplatform_uwsgi.ini
 ```
