@@ -59,15 +59,18 @@
 - Очередь задач: celery.
 - Вёрстка: сетки, позиционирование. Декоративные элементы. Меню: вёрстка
 - Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход
-- Читаем чужой код: сервис Plunker
-- Яндекс.Метрика. Микроформаты
+- Читаем чужой код: [сервис Plunker](https://github.com/filearts/plunker)
+- Яндекс.Метрика. [Микроформаты](http://habrahabr.ru/hub/microformats/)
 - Кеширование. Безопасность. Тестирование. Интернационализация
 
 
-Материалы
+Нерассортированные материалы
 --
 
 - [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
 - [Web Component Architecture & Development with AngularJS](https://leanpub.com/web-component-development-with-angularjs/read)
 - [Scalable and Modular Architecture for CSS](https://smacss.com/)
 - [Какие фреймворки используются на популярных сайтах](https://docs.google.com/spreadsheets/d/1OChsdXnXY8mTums6BhzrIvjTiDbJLry5QTSJkxf8OmY/edit#gid=0)
+- [Продвинутый Gulp и Browserify: интересные трюки](http://habrahabr.ru/post/242379/)
+- [Build A Real-Time Twitter Stream with Node and React.js](https://scotch.io/tutorials/build-a-real-time-twitter-stream-with-node-and-react-js)
+- [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
