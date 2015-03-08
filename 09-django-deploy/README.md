@@ -142,7 +142,15 @@ description "uwsgi tiny instance"
 start on runlevel [2345]
 stop on runlevel [06]
 
-exec uwsgi --emperor /etc/uwsgi/vassals --die-on-term --daemonize /var/log/uwsgi.log
+exec uwsgi --emperor /etc/uwsgi/vassals --die-on-term --logto /var/log/uwsgi.log
+```
+
+Для управления uwsgi через Upstart теперь можно использовать
+```
+start uwsgi
+stop uwsgi
+status uwsgi
+restart uwsgi
 ```
 
 Для ребута сервера используйте
@@ -150,14 +158,7 @@ exec uwsgi --emperor /etc/uwsgi/vassals --die-on-term --daemonize /var/log/uwsgi
 sudo shutdown -r now
 ```
 
-Хотя выше приведён способ [из официального туториала](http://uwsgi-docs.readthedocs.org/en/latest/Upstart.html),
-мне не кажется, что он корректно работает. Например, стопнуть сервис таким образом не получается:
-```
-root@django-deployment-example:~# stop uwsgi
-stop: Unknown instance: 
-```
-
-Если вы сделали изменения в Django-коде, то рестартовать uWSGI можно так:
+Если вы сделали изменения в Django-коде, то рестартовать uWSGI можно и так:
 ```
 touch /etc/uwsgi/vassals/testingplatform_uwsgi.ini
 ```
