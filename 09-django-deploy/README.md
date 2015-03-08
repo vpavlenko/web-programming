@@ -14,41 +14,76 @@ Django: деплой
 7. [Deployment checklist](https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/). Разделение настроек для тестирования/продакшна.
 
 
-Что делать после получения ssh-доступа к серверу
+Как задеплоить Джангу
 ---
 
-[Официальный туториал от uWSGI.](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html) [Перевод этого туториала на Хабре.](http://habrahabr.ru/post/226419/)
+**Шаг 1. Получение сервера**
+
+Получите права доступа к VPS-серверу. [Как это сделать через Digitalocean.](https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digitalocean-droplet-virtual-server)
+
+В [Github Pack](https://education.github.com/pack) есть промокод для DigitalOcean, который позволит студентам вузов бесплатно держать сервер за 10$ в течение 10 месяцев. Если у вас нет возможности использовать Github Pack, то можете использовать [Amazon Web Services (AWS)](http://aws.amazon.com/ru/free/). На продукте Elastic Cloud 2 (EC2) всем новым пользователям дают бесплатно один год использования виртуального сервера типа t2.micro.
 
 Я разворачивал DigitalOcean Droplet Ubuntu 14.04 x64. Сайт доступен тут:
 [178.62.210.172](http://178.62.210.172/). Репозиторий доступен тут:
 [https://bitbucket.org/cxielamiko/testingplatform](https://bitbucket.org/cxielamiko/testingplatform)
 
+**Шаг 2. Чтение туториалов**
+
+Просмотрите [официальный туториал от uWSGI.](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html) [Перевод этого туториала на Хабре.](http://habrahabr.ru/post/226419/)
+
+**Шаг 3. Открытие сессий через tmux**
+
+Залогиньтесь на VPS-сервер под пользователя root. Зайдите под tmux и в дальнейшем все действия выполняйте под ним. Это позволит вам не прекращать ssh-сессии, даже если у вас оборвётся соединение с интернетом. Сессии будут ждать вас до перезапуска сервера.
+
 ```
 sudo apt-get update
+sudo apt-get install tmux
+tmux
+```
 
-# Решить проблему с локалью:
-# http://la2ha.ru/dev/notes/setting_locale_failed
+Для входа в существующие сессии при коннекте набираете
+```
+tmux attach
+```
 
-adduser django
-sudo apt-get install python3-dev python3-setuptools
-sudo easy_install-3.4 virtualenv
+[Шпаргалка по хоткеям tmux](http://habrahabr.ru/post/126996/)
 
+**Шаг 4. Установка nginx**
+
+Обновите репозитории пакетного менеджера и поставьте необходимый софт.
+
+```
+sudo apt-get update
 sudo apt-get install nginx
 ```
+
+На Digitalocean может возникнуть проблема с локалью: кодировкой в терминале. Решение описано тут:
+http://la2ha.ru/dev/notes/setting_locale_failed
+
 
 Теперь наберите в браузере адрес вашего сервера. Вы должны увидеть домашнюю
 страницу nginx.
 
-Обычно, версия nginx, которую можно поставить через aptitude, очень старая,
-поэтому рекомендуется поставить свежую с официального сайта самостоятельно.
+Обычно, версия nginx, которую можно поставить через aptitude, старая,
+поэтому рекомендуется поставить свежую [с официального сайта](http://wiki.nginx.org/Install) самостоятельно.
 
-Когда вы меняете конфиги сервера, перезапускайте его:
+Когда вы меняете конфиги сервера, заставляйте nginx перечитать их:
 ```
-sudo service nginx restart
+sudo service nginx reload
 ```
 
-Cоздайте виртуальное окружение
+При этом конфиги перечитываются. Если в них есть ошибка, ничего не перезапускается, а если ошибок нет, то nginx'у посылается специальный сигнал, который позволяет перечитать конфиги без остановки (и отваливания клиентов).
+
+**Шаг 5. Создание виртуального окружения**
+
+Cоздайте пользователя для старта django-приложения. Создайте из-под него виртуальное окружение.
 ```
+sudo apt-get install python3-dev python3-setuptools
+sudo easy_install-3.4 virtualenv
+
+adduser django
+login django
+cd /home/django
 virtualenv venv
 ```
 
@@ -63,11 +98,12 @@ wget http://dl.dropbox.com/some/path/testingplatform.tar
 tar xvf testingplatform.tar
 ```
 
-Дальше всё по туториалу
-http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html
+Дальше сделайте всё [по туториалу uWSGI](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html)
 ([вот перевод на русский язык](http://habrahabr.ru/post/226419/))
 
 Симлинк `/etc/nginx/sites-enabled/default` можно удалить.
+
+**Шаг 6. Настройка автостарта сервера**
 
 Настройте, чтобы uWSGI стартовал при ребуте.
 Сначала проверьте, что uWSGI можно запустить таким образом:
@@ -82,7 +118,7 @@ tail -f /var/log/uwsgi.log
 
 Зайдите в браузере на ваш сайт. Посмотрите, что заход отражается в логах.
 
-После этого добавьте строку запуска uWSGI в `/etc/rc.local/` перед `exit 0`.
+После этого добавьте строку запуска uWSGI в `/etc/rc.local` перед `exit 0`.
 
 Для ребута сервера используйте
 ```
@@ -180,6 +216,10 @@ python manage.py migrate
 
 Продолжайте развивать проект, который вы начали делать в прошлый раз.
 
-Задеплойте ваше приложение на VPS-сервер. В [Github Pack](https://education.github.com/pack) есть промокод для DigitalOcean, который позволит бесплатно держать вам сервер за 10$ в течение 10 месяцев. Если у вас нет возможности использовать Github Pack, то можете использовать [Amazon Web Services (AWS)](http://aws.amazon.com/ru/free/). На продукте Elastic Cloud 2 (EC2) всем новым пользователям дают бесплатно один год использования виртуального сервера типа t2.micro.
+Задеплойте ваше приложение на VPS-сервер. Отпишитесь [на странице результатов](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
 
-Отпишитесь [на странице результатов](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F-7:-Django-1).
+Материалы
+--
+
+- [Г. Курячий, К. Маслинский. Операционная система Linux](http://docs.altlinux.org/books/altlibrary-linuxintro2.pdf)
+
