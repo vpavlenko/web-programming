@@ -30,19 +30,19 @@
 
 **27 февраля.** [Django: статика, регистрация пользователей, ajax, JSON API, кастомизация админки, миграции базы, XSS](08-django-2)
 
-**6 марта.** [Деплоймент: nginx, uWSGI, PostgreSQL, logrotate](09-django-deploy)
+**6 марта.** [Деплоймент: nginx, uWSGI, PostgreSQL, логгирование](09-django-deploy)
 
 **13 марта.** [Графические компоненты (виджеты)](10-widgets)
 
 **20 марта.** [Автоматизация фронтенда: Bower, Grunt, JSHint, LESS](11-bower-grunt)
 
-**1-5 апреля.** Node.js, WebSockets, MongoDB. Чат
+**27 марта.** [Node.js, socket.io, MongoDB. Чат](12-socketio)
 
-**6-12 апреля.** Облачный хостинг: heroku
+**3 апреля.** [Облачный хостинг: heroku](13-heroku)
 
-**13-19 апреля.** Single page application: Angular.js/Backbone.js
+**10 апреля.** [Single page application: Angular.js/Backbone.js](14-spa)
 
-**20-26 апреля.** React.js
+**17 апреля.** [React.js](15-react)
 
 
 Пул тем
@@ -62,9 +62,14 @@
 - Читаем чужой код: [сервис Plunker](https://github.com/filearts/plunker)
 - Яндекс.Метрика. [Микроформаты](http://habrahabr.ru/hub/microformats/)
 - Кеширование. Безопасность. Тестирование. Интернационализация
+- ES6
+- Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
+- Векторная графика на вебе: raphael, d3.js
+- Вёрстка для мобильных устройств.
+- Вёрстка для печати.
 
 
-Нерассортированные материалы
+Материалы
 --
 
 - [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
@@ -74,3 +79,5 @@
 - [Продвинутый Gulp и Browserify: интересные трюки](http://habrahabr.ru/post/242379/)
 - [Build A Real-Time Twitter Stream with Node and React.js](https://scotch.io/tutorials/build-a-real-time-twitter-stream-with-node-and-react-js)
 - [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
+- [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
+- [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
