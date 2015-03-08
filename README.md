@@ -34,7 +34,7 @@
 
 **13 марта.** [Графические компоненты (виджеты)](10-widgets)
 
-**23-31 марта.** Автоматизация фронтенда: Bower, Grunt, JSHint, LESS
+**20 марта.** [Автоматизация фронтенда: Bower, Grunt, JSHint, LESS](11-bower-grunt)
 
 **1-5 апреля.** Node.js, WebSockets, MongoDB. Чат
 
