@@ -12,7 +12,7 @@
 Примеры моего кода
 --
 
-- [Range slider](range-slider), [демо](http://vpavlenko.github.io/web-programming/10-widgets/range-slider/)
+- [Range slider](range-slider), [демо](http://vpavlenko.github.io/web-programming/10-widgets/range-slider/). [Вдохновение](http://refreshless.com/nouislider/)
 - [Pane](https://github.com/vpavlenko/hh-school-frontend/blob/master/impl/js/pane.js) в [календаре](https://github.com/vpavlenko/hh-school-frontend)
 
 
