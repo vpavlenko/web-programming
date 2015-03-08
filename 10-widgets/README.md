@@ -4,7 +4,17 @@
 План лекции
 -------
 
-1. Разбор примеров: image slider, range slider, alert.
+1. Создание элемента пользователем: специальный класс, вызов конструктора, JQuery-плагин.
+2. Параметризация: параметры элемента, передача конфига.
+2. Взаимодействие с пользователем: колбеки, эвенты.
+
+
+Примеры моего кода
+--
+
+- [Range slider](range-slider), [демо](http://vpavlenko.github.io/web-programming/10-widgets/range-slider/)
+- [Pane](https://github.com/vpavlenko/hh-school-frontend/blob/master/impl/js/pane.js) в [календаре](https://github.com/vpavlenko/hh-school-frontend)
+
 
 Примеры виджетов
 ---

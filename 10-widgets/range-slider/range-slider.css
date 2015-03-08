@@ -1,0 +1,15 @@
+.range-slider-base {
+    width: 300px;
+    height: 40px;
+
+    background-color: green;
+}
+
+.range-slider-handle {
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid black;
+    background-color: red;
+}
+
