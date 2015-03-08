@@ -163,6 +163,7 @@ sudo shutdown -r now
 touch /etc/uwsgi/vassals/testingplatform_uwsgi.ini
 ```
 
+TODO: подумать, хорошо ли, что uwsgi emperor запущен от рута.
 
 
 Настройка базы PostgreSQL

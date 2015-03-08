@@ -50,7 +50,11 @@
 
 - WordPress, создание интернет-магазина на WooCommerce
 - Web Components, Polymer.
-- Обзор современных фронтенд-веяний: Normalize.css; Jade, Sass, Stylus; CoffeeScript, Dart; Gulp, Yeoman.
+- Normalize.css
+- Jade, HAML
+- Sass, Stylus
+- CoffeeScript, Dart, Closure Compiler
+- Yeoman
 - Проектирование интерфейсов.
 - Вёрстка писем.
 - Полнотекстовый поиск.
