@@ -1,23 +1,26 @@
 .range-slider-base {
     position: absolute;
 
-    width: 400px;
-    height: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 200px;
+    height: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 
-    background-color: gray;
+    background-color: lightgray;
 }
 
-.range-slider-handle {
+.range-slider-handle-left, .range-slider-handle-right {
     position: absolute;
-    top: -15px;
+    top: -5px;
 
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 1px #888888   ;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 
-    border: 1px solid black;
-    background-color: darkgray;
+    background-color: #aaaaaa;
 }
 
 .range-slider-handle-left {
@@ -26,4 +29,11 @@
 
 .range-slider-handle-right {
     right: 0;
+}
+
+.range-slider-caption {
+    position: relative;
+    top: -20px;
+
+    font-size: 12px;
 }
