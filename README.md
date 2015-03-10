@@ -88,3 +88,4 @@
 - [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
 - [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
+- [Advanced Web Programming: a course in Aarhus University](https://services.brics.dk/java/courseadmin/AWP)
