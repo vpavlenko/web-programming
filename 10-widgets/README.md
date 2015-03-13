@@ -5,6 +5,7 @@
 --
 
 - [Графические компоненты, шаблонизаторы](http://www.youtube.com/watch?v=iv2Vl_rzQjw)
+- [Практическая работы](http://www.youtube.com/watch?v=i0Meqqp7fMo)
 
 План лекции
 -------
