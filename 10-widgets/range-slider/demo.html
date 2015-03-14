@@ -1,0 +1,84 @@
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="range-slider.css"/>
+<link rel="stylesheet" href="demo.css"/>
+
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="swig.min.js"></script>
+<script src="range-slider.js"></script>
+
+<div class="pane">
+    <h2>Фильтр по цене</h2>
+    <div id="slider-test" class="range-slider"></div>
+</div>
+
+<div class="pane">
+    <div id="rendered-menu"></div>
+</div>
+
+<script id="menu-template" type="text/x-swig-template">
+    <h2>Меню</h2>
+    <ul class="menu">
+        {% for menu_item in menu %}
+        <li class="menu-item">
+            <div class="menu-item-title">{{ menu_item.title }}</div>
+            <div class="menu-item-price">{{ menu_item.price }}₽</div>
+        </li>
+        {% endfor %}
+    </ul>
+</script>
+
+<script>
+    var slider = new RangeSlider($('#slider-test'), {
+        start: [150, 240],
+        range: [0, 300],
+        onDrag: function() {
+            renderMenu();
+        },
+        captionFormat: 'VALUE₽'
+    });
+
+    var sourceMenu = [
+        {title: 'Холодные вьетнамские роллы с креветками, манго и имбирём   ', price: 210},
+        {title: 'Креветка и овощи темпура    ', price: 220},
+        {title: 'Креветочные чипсы с острым соусом ', price: 50},
+        {title: 'Хрустящий кальмар с домашним соусом Чили  ', price:  240},
+        {title: 'Гедза с креветкой (6шт) ', price: 250},
+        {title: 'Гедза со свининой (6 шт.)   ', price: 190},
+        {title: 'Креветки васаби ', price: 280},
+        {title: 'Черные древесные грибы Чили, фризе, красный и зеленый лук  ', price: 110},
+        {title: 'Азиатские овощи обжаренные на воке с устричным соусом и чесноком'    , price: 160},
+        {title: 'Вьетнамские жареные немы с бараниной в рисовой бумаге с соусом нук чам '  , price: 165},
+        {title: 'Спринг-ролл с овощами подаются с соусом из чили и ананаса ', price: 130},
+        {title: 'Спринг-ролл с креветками с соусом из манго   ', price: 295},
+        {title: 'зеленая фасоль по-сычуаньски обжаренная на воке с чили и свининой '   , price: 190},
+        {title: 'Вьетнамский нем с курицей   ', price: 145},
+        {title: 'Спринг-ролл c уткой и соусом хой син    ', price: 265}
+    ].sort(function(a, b) {
+                return a.price - b.price;
+            });
+
+    function renderMenu() {
+        var tpl = $("#menu-template").html();
+
+        var filteredMenu = [];
+        var lowerBound = slider.value()[0];
+        var upperBound = slider.value()[1];
+        sourceMenu.forEach(function(element) {
+           if (lowerBound <= element.price && element.price <= upperBound) {
+               filteredMenu.push(element);
+           }
+        });
+
+        var content = swig.render(tpl, {
+            locals: {
+                menu: filteredMenu
+            }
+        });
+
+        $("#rendered-menu").html(content);
+    }
+
+    renderMenu();
+</script>

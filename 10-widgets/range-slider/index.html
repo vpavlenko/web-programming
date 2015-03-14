@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="range-slider.css"/>
-
 <script src="jquery.min.js"></script>
 <script src="jquery-ui.min.js"></script>
 <script src="range-slider.js"></script>
@@ -7,8 +6,8 @@
 <div id="slider-test"></div>
 
 <script>
-    var slider = new RangeSlider('#slider-test', {
-        start: [10, 70],
-        range: [0, 100]
+    var slider = new RangeSlider($('#slider-test'), {
+        start: [200, 500],
+        range: [0, 600]
     });
 </script>

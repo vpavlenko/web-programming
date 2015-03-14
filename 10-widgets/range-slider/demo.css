@@ -1,0 +1,28 @@
+.menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu-item {
+    text-align: justify;
+}
+
+.menu-item:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.menu-item-title, .menu-item-price {
+    display: inline-block;
+}
+
+.pane {
+    width: 60%;
+    padding: 20px;
+    margin: 20px auto;
+
+    -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+}

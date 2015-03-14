@@ -13,11 +13,15 @@
         });
         $handle.on('drag', function() {
             slider.setValueFromPosition();
+            if (slider.onDragCallback) {
+                slider.onDragCallback();
+            }
         });
     }
 
-
     function RangeSlider(selector, params) {
+        this.captionFormat = params.captionFormat || 'VALUE';
+
         this.$element = $(selector);
         this.$base = $('<div class="range-slider-base">');
         this.$leftHandle = $('<div class="range-slider-handle-left">');
@@ -35,6 +39,8 @@
         this.rangeWidth = this.$base.width() - this.$leftHandle.width();
         this.range = params.range;
         this.value(params.start);
+
+        this.onDragCallback = params.onDrag;
     }
 
     RangeSlider.prototype.value = function(value) {
@@ -46,7 +52,7 @@
             this.showValueToCaptions();
             return this;
         } else {
-            return this.value;
+            return this.numberValue;
         }
     };
 
@@ -61,8 +67,15 @@
             return Math.round(map(x, 0, self.rangeWidth, self.range[0], self.range[1]));
         }
 
-        this.$leftCaption.text(to_range(this.$leftHandle.position().left));
-        this.$rightCaption.text(to_range(this.$rightHandle.position().left));
+        function format(value) {
+            return self.captionFormat.replace('VALUE', value);
+        }
+
+        var leftPos = to_range(self.$leftHandle.position().left);
+        var rightPos = to_range(self.$rightHandle.position().left);
+        this.$leftCaption.text(format(leftPos));
+        this.$rightCaption.text(format(rightPos));
+        this.numberValue = [leftPos, rightPos];
     };
 
     window.RangeSlider = RangeSlider;
