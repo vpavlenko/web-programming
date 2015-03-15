@@ -4,8 +4,9 @@
 План лекции
 -------
 
-1. Bower
-2. Grunt
+1. Идея Node.js, что такое npm
+1. [Bower](http://bower.io/)
+2. [Grunt](http://gruntjs.com/)
 3. CSS-препроцессоры на примере LESS
 
 
@@ -24,6 +25,7 @@
 Материалы
 ---
 
+- [Learnyounode](https://github.com/rvagg/learnyounode) 
 - [Meet Bower: A Package Manager For The Web](http://code.tutsplus.com/tutorials/meet-bower-a-package-manager-for-the-web--net-27774)
 - [Getting Started with Grunt](http://blog.teamtreehouse.com/getting-started-with-grunt)
 - [Gulp или Grunt, да всё равно](http://frontender.info/gulp-grunt-whatever/)
