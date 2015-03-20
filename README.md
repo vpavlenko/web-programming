@@ -34,7 +34,7 @@
 
 **13 марта.** [Графические компоненты (виджеты)](10-widgets)
 
-**20 марта.** [Автоматизация фронтенда: Bower, Grunt, JSHint, LESS, ES6](11-bower-grunt)
+**20 марта.** [Node.js: зачем нужна асинхронность. Npm. Автоматизация фронтенда: Bower, Grunt, JSHint, LESS, ES6](11-bower-grunt)
 
 **27 марта.** [Node.js, Express.js, MongoDB. Socket.io. Архитектурные проблемы создания одностраничных приложений](12-socketio)
 
