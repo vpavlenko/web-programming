@@ -1,6 +1,12 @@
 Автоматизация фронтенда
 ======================
 
+Скринкасты
+---
+
+1. [Асинхронность Node.js, Npm, Bower](http://youtu.be/HyIg-iDj0dE)
+2. [Grunt, LESS, ES6, Traceur](http://youtu.be/eLhb_fFZgGQ)
+
 План лекции
 -------
 
