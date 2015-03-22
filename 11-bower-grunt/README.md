@@ -39,6 +39,7 @@
 
 - [Learnyounode](https://github.com/rvagg/learnyounode) 
 - [Meet Bower: A Package Manager For The Web](http://code.tutsplus.com/tutorials/meet-bower-a-package-manager-for-the-web--net-27774)
+- [Semantic Versioning 2.0.0](http://semver.org/)
 - [Getting Started with Grunt](http://blog.teamtreehouse.com/getting-started-with-grunt)
 - [Gulp или Grunt, да всё равно](http://frontender.info/gulp-grunt-whatever/)
 - [Сборка проектов с помощью Gulp.js. Семинар в Яндексе](http://habrahabr.ru/company/yandex/blog/239993/)
