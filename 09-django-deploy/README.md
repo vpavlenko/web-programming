@@ -109,7 +109,7 @@ nginx автоматически стартует при ребуте. Наст�
 
 Сначала проверьте, что uWSGI можно запустить таким образом:
 ```
-/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals --daemonize /var/log/uwsgi.log
+/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals --daemonize /var/log/uwsgi.log --uid django --gid django
 ```
 
 При этом откройте в соседней панели `tmux` лог:
