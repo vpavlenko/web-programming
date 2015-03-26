@@ -3,7 +3,7 @@ Single page applications
 
 Материалы
 ---
-
+- [Не учите фреймворки, учите архитектуру](http://habrahabr.ru/post/253297/)
 - TodoMVC: [Backbone.js](http://todomvc.com/examples/backbone/), [Angular.js](http://todomvc.com/examples/angularjs/#/)
 - [Backbone.js для «чайников»](http://habrahabr.ru/post/127049/)
 - [Написание сложных интерфейсов с Backbone.js](http://m.habrahabr.ru/post/118782/)

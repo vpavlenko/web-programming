@@ -37,9 +37,9 @@
 
 **20 марта.** [Node.js: зачем нужна асинхронность. Npm. Автоматизация фронтенда: Bower, Grunt, JSHint, LESS, ES6](11-bower-grunt)
 
-**27 марта.** [Node.js, Express.js, MongoDB. Socket.io. Архитектурные проблемы создания одностраничных приложений](12-socketio)
+**27 марта.** [Node.js, Express.js. Socket.io. Облачный хостинг: heroku](12-socketio)
 
-**3 апреля.** [Облачный хостинг: Heroku](13-heroku)
+**3 апреля.** [MongoDB. Архитектура одностраничных приложений](13-spa)
 
 **10 апреля.** [Фреймворки для одностраничных приложений (начало)](14-spa)
 
@@ -89,4 +89,3 @@
 - [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
 - [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
-- [Advanced Web Programming: a course in Aarhus University](https://services.brics.dk/java/courseadmin/AWP)
