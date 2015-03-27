@@ -89,3 +89,5 @@
 - [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
 - [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
+- [Репликация в PostgreSQL 9.0](http://habrahabr.ru/post/106872/)
+- [Spot vs. EC2 instances on Amazon](http://stackoverflow.com/questions/5188871/aws-amazon-ec2-spot-pricing/11996798#11996798)
