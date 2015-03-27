@@ -20,6 +20,10 @@ Node.js, Socket.io и облачный хостинг
 
 3. Задеплойте ваше приложение на Heroku.
 
+4. Добавьте ссылку на демо в заголовок и в README вашего репозитория.
+
+[Вики-страничка с результатами](https://github.com/vpavlenko/web-programming/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9-11..15:-%D0%BA%D0%B0%D0%BD%D0%B1%D0%B0%D0%BD-%D0%B4%D0%BE%D1%81%D0%BA%D0%B0)
+
 
 Материалы
 --
