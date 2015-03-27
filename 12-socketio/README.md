@@ -1,6 +1,12 @@
 Node.js, Socket.io и облачный хостинг
 ===
 
+Скринкасты
+--
+
+- [Socket.io](http://www.youtube.com/watch?v=8PVZD3AHHkM)
+- [Heroku](http://www.youtube.com/watch?v=o23Kx8bZaQk)
+
 План лекции
 ---
 
