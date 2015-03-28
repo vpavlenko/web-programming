@@ -49,33 +49,38 @@
 Пул тем
 -----
 
-- WordPress, создание интернет-магазина на WooCommerce
-- Web Components, Polymer
+**Вёрстка**
+- Сетки, позиционирование. Декоративные элементы. Меню: вёрстка
+- Вёрстка писем
+- Вёрстка для мобильных устройств
+- Вёрстка для печати
+
+**Фронтенд**
+- Yeoman
 - Normalize.css
 - Jade, HAML
 - Sass, Stylus
 - CoffeeScript, Dart, Closure Compiler
-- Yeoman
-- Проектирование интерфейсов
-- Вёрстка писем
-- Полнотекстовый поиск
-- Плагины для браузеров. Bookmarklets
-- Авторизация через соцсети
-- Очередь задач: celery
-- Вёрстка: сетки, позиционирование. Декоративные элементы. Меню: вёрстка
 - Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход
-- Читаем чужой код: [сервис Plunker](https://github.com/filearts/plunker)
-- Яндекс.Метрика. [Микроформаты](http://habrahabr.ru/hub/microformats/)
+- Векторная графика на вебе: raphael, d3.js
+- Web Components, Polymer
+- Тестирование JavaScript. Selenium
+- Плагины для браузеров. Bookmarklets
+- Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
+
+**Бекенд**
+- Полнотекстовый поиск
+- Авторизация через соцсети
 - Кеширование
 - Безопасность. Атаки, механизмы защиты
-- Тестирование ДжаваСкрипта. Selenium
-- Интернационализация
-- ES6
-- Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
-- Векторная графика на вебе: raphael, d3.js
-- Вёрстка для мобильных устройств
-- Вёрстка для печати
+- Очередь задач: celery
 
+**Разное**
+- WordPress, создание интернет-магазина на WooCommerce
+- Проектирование интерфейсов
+- Читаем чужой код: [сервис Plunker](https://github.com/filearts/plunker)
+- Интернационализация
+- Яндекс.Метрика. [Микроформаты](http://habrahabr.ru/hub/microformats/)
 
 Материалы
 --
@@ -89,5 +94,5 @@
 - [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
 - [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
-- [Репликация в PostgreSQL 9.0](http://habrahabr.ru/post/106872/)
+- [А. Ю. Васильев. Работа с PostgreSQL: настройка и масштабирование](http://postgresql.leopard.in.ua/html/)
 - [Spot vs. EC2 instances on Amazon](http://stackoverflow.com/questions/5188871/aws-amazon-ec2-spot-pricing/11996798#11996798)
