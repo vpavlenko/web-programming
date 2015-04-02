@@ -14,3 +14,4 @@ Single page applications
 - [AngularJS’ Internals In Depth](http://www.smashingmagazine.com/2015/01/22/angularjs-internals-in-depth/)
 - [Getting Started with Mithril](http://lhorie.github.io/mithril/getting-started.html)
 - [MVC умер, пришло время MOVE (читайте комментарии)](http://habrahabr.ru/post/147038/)
+- [Илья Бирман. Будущее нативных и веб-приложений](http://ilyabirman.ru/meanwhile/all/web-or-native-future/)
