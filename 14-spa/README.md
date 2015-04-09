@@ -1,4 +1,4 @@
-Single page applications
+Single page applications, виртуальное DOM-дерево
 ===
 
 Лекция велась на меловой доске, скринкаста и записи не велось.
