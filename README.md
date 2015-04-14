@@ -43,7 +43,7 @@
 
 **8 апреля.** [Фреймворки для одностраничных приложений: концепция MVC, виртуальное DOM-дерево](14-spa)
 
-**15 апреля.** Тестирование JavaScript. Selenium
+**15 апреля.** [Тестирование фронтенда: Karma, QUnit. Тестирование API: requests. BeautifulSoup. Selenium WebDriver](15-selenium)
 
 **22 апреля.** Плагины для браузеров. Bookmarklets
 
