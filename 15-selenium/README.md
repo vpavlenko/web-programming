@@ -1,6 +1,12 @@
 Тестирование фронтенда
 ====
 
+Скринкасты
+--
+
+- [Qunit, Karma, Mocha, Chai](http://www.youtube.com/watch?v=G_9NR12QnEM)
+- [Selenium WebDriver](http://www.youtube.com/watch?v=EVMr27zRYvk)
+
 План
 --
 
