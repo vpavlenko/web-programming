@@ -4,6 +4,7 @@
 План
 --
 
+**Тестирование фронтенда**
 - [Qunit Unit Testing Framework](http://qunitjs.com/cookbook/). Тесты в библиотеке [NoUiSlider](https://github.com/leongersen/noUiSlider).
 - [Karma Test Runner](http://karma-runner.github.io/0.12/index.html). Тесты в библиотеке [Moment.js](https://github.com/moment/moment)
 - [Mocha Unit Testing Framework](http://mochajs.org/), [Chai Assertion Library](http://chaijs.com/). Тесты в библиотеке [Selectize.js](https://github.com/brianreavis/selectize.js)
@@ -19,7 +20,10 @@
 --
 
 1. [Скачайте](http://chromedriver.storage.googleapis.com/index.html) и распакуйте chromedriver.
-2. Пропишите путь до директории с распакованным файлом в PATH.
+2. Пропишите путь до директории с распакованным файлом в PATH:
+```
+export PATH=$PATH:~/path/to/folder_with_chromedriver/
+```
 
 Материалы
 --
