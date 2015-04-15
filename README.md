@@ -51,7 +51,7 @@
 
 
 
-Пул тем
+Что не рассказано на курсе
 -----
 
 **Вёрстка**
@@ -69,7 +69,7 @@
 - Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход [+]
 - Векторная графика на вебе: raphael, d3.js [+]
 - Web Components, Polymer
-- Тестирование JavaScript. Selenium [++]
+- React.js [++]
 - Плагины для браузеров. Bookmarklets [++]
 - Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
 
