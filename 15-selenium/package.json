@@ -1,0 +1,14 @@
+{
+  "name": "15-selenium",
+  "version": "1.0.0",
+  "description": "Тестирование фронтенда ====",
+  "main": "test-gist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^2.45.1"
+  }
+}
