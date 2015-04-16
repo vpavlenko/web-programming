@@ -100,3 +100,4 @@
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
 - [А. Ю. Васильев. Работа с PostgreSQL: настройка и масштабирование](http://postgresql.leopard.in.ua/html/)
 - [Spot vs. EC2 instances on Amazon](http://stackoverflow.com/questions/5188871/aws-amazon-ec2-spot-pricing/11996798#11996798)
+- [HTML5 Game Development - Udacity Online Course](https://www.udacity.com/course/cs255)
