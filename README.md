@@ -45,9 +45,9 @@
 
 **15 апреля.** [Тестирование фронтенда: QUnit, Mocha, Karma. Тестирование API: requests. Selenium WebDriver](15-selenium)
 
-**22 апреля.** Плагины для браузеров. Bookmarklets
+**22 апреля.** [Букмарклеты. Плагины для Хрома](16-bookmarklets)
 
-**29 апреля (последняя лекция).** WordPress, создание интернет-магазина на WooCommerce
+**29 апреля.** WordPress, создание интернет-магазина на WooCommerce
 
 
 
@@ -70,7 +70,6 @@
 - Векторная графика на вебе: raphael, d3.js [+]
 - Web Components, Polymer
 - React.js [++]
-- Плагины для браузеров. Bookmarklets [++]
 - Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
 
 **Бекенд**
