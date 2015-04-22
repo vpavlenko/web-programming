@@ -3,15 +3,11 @@
 
 **Плагины:**
 
-- [Chrome: Declare Permissions](https://developer.chrome.com/extensions/declare_permissions)
+- [Chrome Extensions: Content Scripts](https://developer.chrome.com/extensions/content_scripts)
+- [Chrome Extensions: Declare Permissions](https://developer.chrome.com/extensions/declare_permissions)
 - [Расширение для Вконтакта](https://github.com/vpavlenko/vk-chrome-extensions)
 - [Chrome extension за выходные: Battery charge](http://habrahabr.ru/post/208644/)
 - [Обзор вредоносного браузерного расширения](http://habrahabr.ru/post/255801/)
-- ColorZilla - ColorPicker
-- Drag and Go
-- AdBlock
-- Pushbullet
-- ZenMate - как делать прокси-соединение
 
 **Букмарклеты:**
 - [Сервис закладок TheOnlyPage](http://www.theonlypage.com/)

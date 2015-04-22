@@ -1,7 +1,13 @@
 React
 ==
 
-- [React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
+- [Learning React.js: Getting Started and Concepts](https://scotch.io/tutorials/learning-react-getting-started-and-concepts)
+    - [Hello World](http://jsfiddle.net/vjeux/kb3gN/)
+    - [Counter](http://codepen.io/kenwheeler/pen/kxrDu)
+    - [Filtered List](http://codepen.io/kenwheeler/pen/jDKEo)
+
+- [Facebook React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
+
 - [Build A Real-Time Twitter Stream with Node and React.js](https://scotch.io/tutorials/build-a-real-time-twitter-stream-with-node-and-react-js)
 
 
