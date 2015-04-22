@@ -1,12 +1,14 @@
 Плагины и букмарклеты
 ==
 
+**[Скринкаст](http://www.youtube.com/watch?v=n_6tsfBzInk)**
+
 **Плагины:**
 
 - [Chrome Extensions: Content Scripts](https://developer.chrome.com/extensions/content_scripts)
 - [Chrome Extensions: Declare Permissions](https://developer.chrome.com/extensions/declare_permissions)
-- [Расширение для Вконтакта](https://github.com/vpavlenko/vk-chrome-extensions)
-- [Chrome extension за выходные: Battery charge](http://habrahabr.ru/post/208644/)
+- [Плагин Павла Дубова для Вконтакта](https://github.com/vpavlenko/vk-chrome-extensions)
+- [Chrome extension за выходные: Battery charge (Knockout.js, Android-приложение)](http://habrahabr.ru/post/208644/)
 - [Обзор вредоносного браузерного расширения](http://habrahabr.ru/post/255801/)
 
 **Букмарклеты:**
