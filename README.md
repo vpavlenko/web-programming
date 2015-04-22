@@ -69,7 +69,6 @@
 - Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход [+]
 - Векторная графика на вебе: raphael, d3.js [+]
 - Web Components, Polymer
-- React.js [++]
 - Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
 
 **Бекенд**
