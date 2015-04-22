@@ -4,7 +4,7 @@ React
 План лекции
 --
 
-[Скринкаст](http://www.youtube.com/watch?v=coIv2d_t77U)
+**[Скринкаст](http://www.youtube.com/watch?v=coIv2d_t77U)**
 
 - [Learning React.js: Getting Started and Concepts](https://scotch.io/tutorials/learning-react-getting-started-and-concepts)
     - [Hello World](http://jsfiddle.net/vjeux/kb3gN/)
