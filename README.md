@@ -45,7 +45,7 @@
 
 **15 апреля.** [Тестирование фронтенда: QUnit, Mocha, Karma. Тестирование API: requests. Selenium WebDriver](15-selenium)
 
-**22 апреля.** [Букмарклеты. Плагины для Хрома](16-bookmarklets)
+**22 апреля.** [React.js](17-react). Кроме того, [Плагины для Хрома. Букмарклеты](16-bookmarklets)
 
 **29 апреля.** WordPress, создание интернет-магазина на WooCommerce
 
@@ -89,15 +89,16 @@
 Материалы
 --
 
+**Фронтенд**
+
 - [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
-- [Web Component Architecture & Development with AngularJS](https://leanpub.com/web-component-development-with-angularjs/read)
 - [Scalable and Modular Architecture for CSS](https://smacss.com/)
 - [Какие фреймворки используются на популярных сайтах](https://docs.google.com/spreadsheets/d/1OChsdXnXY8mTums6BhzrIvjTiDbJLry5QTSJkxf8OmY/edit#gid=0)
-- [Продвинутый Gulp и Browserify: интересные трюки](http://habrahabr.ru/post/242379/)
-- [Build A Real-Time Twitter Stream with Node and React.js](https://scotch.io/tutorials/build-a-real-time-twitter-stream-with-node-and-react-js)
-- [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
-- [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
+- [HTML5 Game Development - Udacity Online Course](https://www.udacity.com/course/cs255)
+
+**Бекенд**
 - [А. Ю. Васильев. Работа с PostgreSQL: настройка и масштабирование](http://postgresql.leopard.in.ua/html/)
 - [Spot vs. EC2 instances on Amazon](http://stackoverflow.com/questions/5188871/aws-amazon-ec2-spot-pricing/11996798#11996798)
-- [HTML5 Game Development - Udacity Online Course](https://www.udacity.com/course/cs255)
+- [Лекции Техносферы. 1 семестр. Методы использования СУБД в интернет-приложениях](http://habrahabr.ru/company/mailru/blog/256039/)
+

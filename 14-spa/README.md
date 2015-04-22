@@ -44,9 +44,10 @@ Single page applications, виртуальное DOM-дерево
 - [Backbone.js для «чайников»](http://habrahabr.ru/post/127049/)
 - [Написание сложных интерфейсов с Backbone.js](http://m.habrahabr.ru/post/118782/)
 - [AngularJS’ Internals In Depth](http://www.smashingmagazine.com/2015/01/22/angularjs-internals-in-depth/)
+- [Web Component Architecture & Development with AngularJS](https://leanpub.com/web-component-development-with-angularjs/read)
 - [Getting Started with Mithril](http://lhorie.github.io/mithril/getting-started.html)
 
-**Абстрактная илософия**
+**Абстрактная философия**
 - [Илья Бирман. Будущее нативных и веб-приложений](http://ilyabirman.ru/meanwhile/all/web-or-native-future/)
 - [Не учите фреймворки, учите архитектуру](http://habrahabr.ru/post/253297/)
 - [MVC умер, пришло время MOVE (читайте комментарии)](http://habrahabr.ru/post/147038/)

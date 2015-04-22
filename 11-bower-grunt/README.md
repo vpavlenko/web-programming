@@ -37,12 +37,15 @@
 Материалы
 ---
 
-- [Learnyounode](https://github.com/rvagg/learnyounode) 
+- [Learnyounode](https://github.com/rvagg/learnyounode)
 - [Meet Bower: A Package Manager For The Web](http://code.tutsplus.com/tutorials/meet-bower-a-package-manager-for-the-web--net-27774)
 - [Semantic Versioning 2.0.0](http://semver.org/)
 - [Getting Started with Grunt](http://blog.teamtreehouse.com/getting-started-with-grunt)
 - [Gulp или Grunt, да всё равно](http://frontender.info/gulp-grunt-whatever/)
 - [Сборка проектов с помощью Gulp.js. Семинар в Яндексе](http://habrahabr.ru/company/yandex/blog/239993/)
+- [Продвинутый Gulp и Browserify: интересные трюки](http://habrahabr.ru/post/242379/)
 - [LESS: программируемый язык стилей](http://habrahabr.ru/post/136525/)
 - [SASS против LESS](http://habrahabr.ru/post/144309/)
 - [Знакомство с LESS (курс на HTMLAcademy)](https://htmlacademy.ru/courses/85)
+- [Обзор ECMAScript 6, следующей версии JavaScript](http://habrahabr.ru/post/175371/)
+- [ECMAScript 6, статья в блоге мейнтейнера socket.io](http://rauchg.com/2015/ecmascript-6/)
