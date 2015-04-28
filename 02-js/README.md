@@ -47,5 +47,6 @@ JavaScript
 1. [Наследование и каскадность в CSS](http://www.puzzleweb.ru/css/18_inherit_cascade.php)
 2. [Event bubbling](http://habrahabr.ru/post/126471/)
 1. [Курс по JQuery на Codecademy](http://www.codecademy.com/en/tracks/jquery). Курс по Джаваскрипту на Кодакадеми мне кажется бессмысленным, я его не советую.
+5. [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
 3. John Resig, Bear Bibeault. Secrets of the JavaScript Ninja. [twirpx.com](http://www.twirpx.com/).
 4. [Building a JavaScript Framework](books/build-a-javascript-framework.pdf)

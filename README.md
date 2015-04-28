@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/vpavlenko/web-programming.svg?branch=master)](https://travis-ci.org/vpavlenko/web-programming)
 
-Спецкурс читается в МФТИ в Долгопрудном в 2014-2015 учебном году.
+Спецкурс читался в МФТИ в Долгопрудном в 2014-2015 учебном году.
 
 [Форма обратной связи](http://goo.gl/forms/mfsZ5oQWa5)
 
@@ -47,7 +47,7 @@
 
 **22 апреля.** [React.js](17-react). Кроме того, [Плагины для Хрома. Букмарклеты](16-bookmarklets)
 
-**29 апреля.** Проектирование интерфейсов, мокапы. WordPress, создание интернет-магазина на WooCommerce
+**29 апреля.** [WordPress, создание интернет-магазина на WooCommerce](18-final)
 
 
 
@@ -55,7 +55,7 @@
 -----
 
 **Вёрстка**
-- Сетки, позиционирование. Декоративные элементы. Меню: вёрстка
+- Сетки, позиционирование. Декоративные элементы. Вёрстка меню
 - Вёрстка писем
 - Вёрстка для мобильных устройств
 - Вёрстка для печати
@@ -63,23 +63,22 @@
 **Фронтенд**
 - Yeoman
 - Normalize.css
-- Jade, HAML
-- Sass, Stylus
-- CoffeeScript, Dart, Closure Compiler
-- Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход [+]
-- Векторная графика на вебе: raphael, d3.js [+]
+- Препроцессоры HTML: Jade, HAML
+- Современные CSS-препроцессоры Sass, Stylus
+- Языки, компилируемые в JavaScript: CoffeeScript, Dart, Closure Compiler
+- Зависимости в JavaScript: AMD, Require.js, CommonJS, ES6-подход
+- Векторная графика на вебе: raphael, d3.js
 - Web Components, Polymer
 - Как лечить [scrolling amnesia](https://cldup.com/3m0DOKp9BW.gif)?
 
 **Бекенд**
 - Полнотекстовый поиск
-- Авторизация через соцсети [+]
+- Авторизация через соцсети
 - Кеширование
-- Безопасность. Атаки, механизмы защиты [+]
-- Очередь задач: celery [+]
+- Безопасность. Атаки, механизмы защиты
+- Очередь задач: celery
 
 **Разное**
-- WordPress, создание интернет-магазина на WooCommerce [++]
 - Проектирование интерфейсов
 - Читаем чужой код: [сервис Plunker](https://github.com/filearts/plunker)
 - Интернационализация
@@ -90,7 +89,6 @@
 
 **Фронтенд**
 
-- [Eloquent JavaScript, русский перевод](http://habrahabr.ru/post/240219/)
 - [Scalable and Modular Architecture for CSS](https://smacss.com/)
 - [Какие фреймворки используются на популярных сайтах](https://docs.google.com/spreadsheets/d/1OChsdXnXY8mTums6BhzrIvjTiDbJLry5QTSJkxf8OmY/edit#gid=0)
 - [7 Principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/#push-code-updates)
@@ -100,4 +98,3 @@
 - [А. Ю. Васильев. Работа с PostgreSQL: настройка и масштабирование](http://postgresql.leopard.in.ua/html/)
 - [Spot vs. EC2 instances on Amazon](http://stackoverflow.com/questions/5188871/aws-amazon-ec2-spot-pricing/11996798#11996798)
 - [Лекции Техносферы. 1 семестр. Методы использования СУБД в интернет-приложениях](http://habrahabr.ru/company/mailru/blog/256039/)
-
