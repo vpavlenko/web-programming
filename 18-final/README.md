@@ -32,8 +32,15 @@
 --
 
 **WordPress**
-- [Нюансы коммерческой разработки на WordPress](http://m.habrahabr.ru/post/252393/)
-- [Как сверстать тему для WordPress](http://m.habrahabr.ru/post/228523/)
+- [Нюансы коммерческой разработки на WordPress](http://habrahabr.ru/post/252393/)
+    - [база отдыха](http://fort-andreevskiy.ru)
+    - [куча заказов на шаржи](http://a-kalinov.ru/)
+    - [их стартап, хорошо дело идет](http://procleandv.net/)
+    - [думаю, ценник, по которому сделан это сайт ясен и понятен](http://evakuator-27.ru/)
+    - [кухонные штуки](http://virtamebel.ru/)
+    - [адвокат, клиентов куча](http://pushkarev-adv.ru/)
+    - [пассажирские перевозки](http://ve27.ru/)
+- [Как сверстать тему для WordPress](http://habrahabr.ru/post/228523/)
 
 **Дизайн**
 - [Ководство](http://www.artlebedev.ru/kovodstvo/sections/)
