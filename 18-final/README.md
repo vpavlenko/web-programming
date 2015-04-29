@@ -1,5 +1,7 @@
 Готовые решения и как делать свой проект
---
+==
+
+[Скринкаст](http://www.youtube.com/watch?v=7Q5rfo9kGx0)
 
 Демо к лекции
 --
@@ -48,6 +50,6 @@
 - [Про пользовательский интерфейс в блоге Ильи Бирмана](http://ilyabirman.ru/meanwhile/tags/ui/)
 
 **Бизнес**
-- [http://startupclass.samaltman.com/](How to Start a Startup (Stanford course))
-- [http://www.amazon.com/Founders-Work-Stories-Startups-Early/dp/1430210788](Founders at Work: Stories of Startups' Early Days)
+- [How to Start a Startup (Stanford course)](http://startupclass.samaltman.com/)
+- [Founders at Work: Stories of Startups' Early Days](http://www.amazon.com/Founders-Work-Stories-Startups-Early/dp/1430210788)
 - [Что такое профессиональная этика? Кодекс бюрошника](http://artgorbunov.ru/bb/soviet/20140623/)
