@@ -31,7 +31,7 @@
 Материалы
 --
 
-**WordPress**
+**CMS**
 - [Нюансы коммерческой разработки на WordPress](http://habrahabr.ru/post/252393/)
     - [база отдыха](http://fort-andreevskiy.ru)
     - [куча заказов на шаржи](http://a-kalinov.ru/)
@@ -41,7 +41,13 @@
     - [адвокат, клиентов куча](http://pushkarev-adv.ru/)
     - [пассажирские перевозки](http://ve27.ru/)
 - [Как сверстать тему для WordPress](http://habrahabr.ru/post/228523/)
+- [Обзор и классификация CMS по категориям (2013)](http://habrahabr.ru/post/193168/)
 
 **Дизайн**
 - [Ководство](http://www.artlebedev.ru/kovodstvo/sections/)
 - [Про пользовательский интерфейс в блоге Ильи Бирмана](http://ilyabirman.ru/meanwhile/tags/ui/)
+
+**Бизнес**
+- [http://startupclass.samaltman.com/](How to Start a Startup (Stanford course))
+- [http://www.amazon.com/Founders-Work-Stories-Startups-Early/dp/1430210788](Founders at Work: Stories of Startups' Early Days)
+- [Что такое профессиональная этика? Кодекс бюрошника](http://artgorbunov.ru/bb/soviet/20140623/)
