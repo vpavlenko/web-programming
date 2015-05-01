@@ -1,7 +1,7 @@
 Готовые решения и как делать свой проект
 ==
 
-[Скринкаст](http://www.youtube.com/watch?v=7Q5rfo9kGx0)
+[**Скринкаст**](http://www.youtube.com/watch?v=7Q5rfo9kGx0)
 
 Демо к лекции
 --
