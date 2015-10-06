@@ -5,12 +5,13 @@
 
 Спецкурс читался в МФТИ в Долгопрудном в 2014-2015 учебном году.
 
-**Реклама.** Ещё на Физтехе читается курс по компьютерной безопасности и CTF. [Их репозиторий](https://github.com/xairy/mipt-ctf), [их группа в ВК](https://vk.com/mipt_ctf).
+[**Видеолекции курса есть на Ютьюбе**](http://www.youtube.com/playlist?list=PLzQrZe3EemP5KsgWGnmC0QrOzQqjg3Kd5)
 
-Проект нашего ученика
+Курсы на Физтехе в 2015-2016 году
 --
-
-[**Миптакар**](http://miptacar.ru/) - сайт поиска попутчиков на Физтехе
+- **Веб-программирование, лектор Вадим Марковцев.** [Материалы](http://vmarkovtsev.github.io/mipt_web_2015/00_overview/index.html), [группа в ВК](https://vk.com/mipt_web).
+- **Компьютерная безопасность и CTF.** [Репозиторий](https://github.com/xairy/mipt-ctf), [группа в ВК](https://vk.com/mipt_ctf).
+- **Анализ данных.** [Репозиторий](https://github.com/vkantor/MIPT_Data_mining_in_action_2015), [группа в ВК](https://vk.com/data_mining_in_action).
 
 Осенний семестр
 ----
@@ -50,6 +51,11 @@
 
 **29 апреля.** [WordPress, создание интернет-магазина на WooCommerce](18-final)
 
+
+Проект нашего ученика
+--
+
+[**Миптакар**](http://miptacar.ru/) - сайт поиска попутчиков на Физтехе
 
 
 Что не рассказано на курсе
