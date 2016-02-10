@@ -52,3 +52,4 @@ HTML, CSS, JavaScript на веб-странице: [всё в одном фай
 1. [Dive into HTML5](http://diveintohtml5.info/)
 2. Лекции Школы разработки интерфейсов: [2012](http://habrahabr.ru/company/yandex/blog/168259/), [2013](https://tech.yandex.ru/education/shri/msk-2013/). [Презентация Вадима Пацева по CSS с курса на Школе разработки интерфейсов](http://vpavlenko.github.io/YWDS-CSS/)
 3. [Idiomatic HTML](https://github.com/necolas/idiomatic-html), [idiomatic CSS](https://github.com/necolas/idiomatic-css/tree/master/translations/ru-RU).
+3. [Как пользоваться хостингом hostinger.ru](https://github.com/vpavlenko/web-programming/wiki/%D0%9A%D0%B0%D0%BA-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F-%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3%D0%BE%D0%BC-hostinger.ru)
