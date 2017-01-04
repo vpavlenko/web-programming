@@ -8,7 +8,7 @@ HTML и CSS
 
 Я участвовал в этих проектах:
 - http://pythontutor.ru/
-- http://2long2read.ru/
+- [2long2read](https://vc.ru/p/summly-rus)
 
 Я хочу научить вас делать что-то подобное.
 
