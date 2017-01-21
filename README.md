@@ -7,7 +7,7 @@
 
 [Видеолекции курса есть на Ютьюбе](http://www.youtube.com/playlist?list=PLzQrZe3EemP5KsgWGnmC0QrOzQqjg3Kd5)
 
-[**Ещё у меня есть начальный курс Питона Snakify.org с интересными задачами**](https://snakify.org/)
+**Ещё у меня есть начальный курс Питона [Snakify.org](https://snakify.org/) с интересными задачами**
 
 Курсы на Физтехе в 2015-2016 году
 --
