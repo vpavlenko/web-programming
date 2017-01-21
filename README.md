@@ -5,7 +5,9 @@
 
 Спецкурс читался в МФТИ в Долгопрудном в 2014-2015 учебном году.
 
-[**Видеолекции курса есть на Ютьюбе**](http://www.youtube.com/playlist?list=PLzQrZe3EemP5KsgWGnmC0QrOzQqjg3Kd5)
+[Видеолекции курса есть на Ютьюбе](http://www.youtube.com/playlist?list=PLzQrZe3EemP5KsgWGnmC0QrOzQqjg3Kd5)
+
+[**Ещё у меня есть начальный курс Питона Snakify.org с интересными задачами**](https://snakify.org/)
 
 Курсы на Физтехе в 2015-2016 году
 --
