@@ -11,9 +11,9 @@
 
 Курсы на Физтехе в 2015-2016 году
 --
-- **Веб-программирование, лектор Вадим Марковцев.** [Материалы](http://vmarkovtsev.github.io/mipt_web_2015/00_overview/index.html), [группа в ВК](https://vk.com/mipt_web).
-- **Компьютерная безопасность и CTF.** [Репозиторий](https://github.com/xairy/mipt-ctf), [группа в ВК](https://vk.com/mipt_ctf).
-- **Анализ данных.** [Репозиторий](https://github.com/vkantor/MIPT_Data_mining_in_action_2015), [группа в ВК](https://vk.com/data_mining_in_action).
+- Веб-программирование, лектор Вадим Марковцев. [Материалы](http://vmarkovtsev.github.io/mipt_web_2015/00_overview/index.html), [группа в ВК](https://vk.com/mipt_web).
+- Компьютерная безопасность и CTF. [Репозиторий](https://github.com/xairy/mipt-ctf), [группа в ВК](https://vk.com/mipt_ctf).
+- Анализ данных. [Репозиторий](https://github.com/vkantor/MIPT_Data_mining_in_action_2015), [группа в ВК](https://vk.com/data_mining_in_action).
 
 Осенний семестр
 ----
