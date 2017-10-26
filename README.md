@@ -3,7 +3,9 @@
 
 [![Build Status](https://travis-ci.org/vpavlenko/web-programming.svg?branch=master)](https://travis-ci.org/vpavlenko/web-programming)
 
-Спецкурс читался в МФТИ в Долгопрудном в 2014-2015 учебном году. **В октябре 2017** года мы начинаем проходить курс маленьким сообществом. Напишите [Виталику](t.me/vitalypavlenko), и вас добавят в чатик.
+> В октябре 2017 года мы начинаем проходить курс маленьким сообществом. Напишите [Виталику](https://t.me/vitalypavlenko), и вас добавят в чатик.
+
+Спецкурс читался в МФТИ в Долгопрудном в 2014-2015 учебном году. 
 
 [Видеолекции курса есть на Ютьюбе](http://www.youtube.com/playlist?list=PLzQrZe3EemP5KsgWGnmC0QrOzQqjg3Kd5)
 
